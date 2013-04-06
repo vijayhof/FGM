@@ -1,0 +1,157 @@
+//
+//  MathUtility.m
+//
+
+#import "MathUtility.h"
+#import "Utility.h"
+#import "Constants.h"
+#import "MathUIDataObject.h"
+
+@implementation MathUtility
+
++ (NSMutableArray*) getFirstNumberArray
+{
+    int curNum = [Utility getCurrentNumber];
+    int maxSize = [Utility getMaxNumberArraySize];
+    
+    NSMutableArray* retArr = [[NSMutableArray alloc] initWithCapacity:maxSize];
+    for(int i = 0; i < maxSize; i++)
+    {
+        [retArr addObject:[NSNumber numberWithInteger:curNum]];
+    }
+    
+    return retArr;
+}
+
++ (NSMutableArray*) getSecondNumberArray
+{
+    BOOL shufNums = [Utility getShuffleNumbers];
+    int maxSize = [Utility getMaxNumberArraySize];
+    
+    NSMutableArray* retArr = [[NSMutableArray alloc] initWithCapacity:maxSize];
+    
+    shufNums = false; // TODO temporary
+    
+    if(shufNums)
+    {
+        // do something TODO
+        // get randoms numbers
+    }
+    else
+    {
+        for(int i = 0; i < maxSize; i++)
+        {
+            [retArr addObject:[NSNumber numberWithInteger:(i+1)]];
+        }
+        
+    }
+    
+    return retArr;
+}
+
++ (NSMutableArray*) getOperandArray
+{
+    BOOL shufOps = [Utility getShuffleOperations];
+    int maxSize = [Utility getMaxNumberArraySize];
+    NSString* opStr = [Utility getCurrentOperation];
+    
+    NSMutableArray* retArr = [[NSMutableArray alloc] initWithCapacity:maxSize];
+    
+    shufOps = false; // TODO temporary
+    
+    if(shufOps)
+    {
+        // do something TODO
+        // get randoms operands
+    }
+    else
+    {
+        for(int i = 0; i < maxSize; i++)
+        {
+            [retArr addObject:opStr];
+        }
+        
+    }
+    
+    return retArr;
+    
+}
+
+
++ (NSMutableArray*) getMathUIObjectArray
+{
+    NSMutableArray* firstNumberArr  = [MathUtility getFirstNumberArray];
+    NSMutableArray* secondNumberArr = [MathUtility getSecondNumberArray];
+    NSMutableArray* operandArr      = [MathUtility getOperandArray];
+    
+    MathUIDataObject* mathUiDataObject = nil;
+    int firstNumber = -1;
+    int secondNumber = -1;
+    int resultNumber = -1;
+    NSString* operand = nil;
+    
+    int maxSize = [Utility getMaxNumberArraySize];
+    NSMutableArray* retArr = [[NSMutableArray alloc] initWithCapacity:maxSize];
+    for(int i = 0; i < maxSize; i++)
+    {
+        firstNumber = [[firstNumberArr objectAtIndex:i] integerValue];
+        secondNumber = [[secondNumberArr objectAtIndex:i] integerValue];
+        operand = [operandArr objectAtIndex:i];
+
+        if([operand isEqualToString:kADD_OP])
+        {
+            resultNumber = firstNumber + secondNumber;
+        }
+        else if([operand isEqualToString:kMUL_OP])
+        {
+            resultNumber = firstNumber * secondNumber;
+        }
+        else if([operand isEqualToString:kSUB_OP])
+        {
+            firstNumber = firstNumber + secondNumber;
+            secondNumber = [[firstNumberArr objectAtIndex:i] integerValue];
+            resultNumber = firstNumber - secondNumber;
+        }
+        else if([operand isEqualToString:kDIV_OP])
+        {
+            firstNumber = firstNumber * secondNumber;
+            secondNumber = [[firstNumberArr objectAtIndex:i] integerValue];
+            resultNumber = firstNumber / secondNumber;
+        }
+        
+        mathUiDataObject = [[MathUIDataObject alloc] init];
+        mathUiDataObject.firstNumber  = firstNumber;
+        mathUiDataObject.secondNumber = secondNumber;
+        mathUiDataObject.operand      = [operandArr objectAtIndex:i];
+        mathUiDataObject.resultNumber = resultNumber;
+        
+        [retArr addObject:mathUiDataObject];
+    }
+    
+    // TODO memory cleanup
+    return retArr;
+}
+
++ (NSString*) getOperandSymbol: (NSString *) operandName
+{
+    if([operandName isEqualToString:kADD_OP])
+    {
+        return kADD_OP_SYM;
+    }
+    else if([operandName isEqualToString:kSUB_OP])
+    {
+        return kSUB_OP_SYM;
+    }
+    else if([operandName isEqualToString:kMUL_OP])
+    {
+        return kMUL_OP_SYM;
+    }
+    else if([operandName isEqualToString:kMUL_OP])
+    {
+        return kMUL_OP_SYM;
+    }
+    
+    return nil;
+}
+
+@end
