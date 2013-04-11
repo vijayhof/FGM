@@ -6,13 +6,13 @@
 //  Copyright (c) 2011 Dave Mark. All rights reserved.
 //
 #import "Constants.h"
-#import "AddComponentController.h"
+#import "BaseTableComponentController.h"
 #import "MathUILabelObject.h"
 #import "MathUIDataObject.h"
 #import "Utility.h"
 #import "MathUtility.h"
 
-@implementation AddComponentController
+@implementation BaseTableComponentController
 
 @synthesize stepper;
 @synthesize shuffleSwitch;
@@ -21,7 +21,14 @@
 @synthesize  r1op, r2op, r3op, r4op, r5op, r6op, r7op, r8op, r9op, r10op;
 @synthesize  r1c2, r2c2, r3c2, r4c2, r5c2, r6c2, r7c2, r8c2, r9c2, r10c2;
 @synthesize  r1c3, r2c3, r3c3, r4c3, r5c3, r6c3, r7c3, r8c3, r9c3, r10c3;
+@synthesize  r1btn, r2btn, r3btn, r4btn, r5btn, r6btn, r7btn, r8btn, r9btn, r10btn;
 @synthesize  mathUiLabelObjectArr;
+
+- (BOOL)showTapButton
+{
+    D2Log(@"BaseTableComponentController showTapButton");
+    return NO;
+}
 
 - (IBAction)toggleOperand:(id)sender
 {
@@ -50,7 +57,6 @@
 
 - (IBAction)shufflePressed:(UISwitch*)sender
 {
-    D2Log(@"shufflePressed: %@", sender.on ? @"ON" : @"OFF");
     [Utility setShuffleNumbers:sender.on];
     [self bindData:[MathUtility getMathUIObjectArray]];
 }
@@ -60,6 +66,11 @@
     double value = [sender value];
     [Utility setCurrentNumber:(int) value];
     [self bindData:[MathUtility getMathUIObjectArray]];
+}
+
+- (IBAction)tapButtonPressed:(UIButton *)sender
+{
+    [sender setHidden:YES];
 }
 
 - (void)bindData:(NSMutableArray*) dataObj
@@ -82,11 +93,21 @@
         [mathUiLabelObject.operandLabel setText: tmpStr];
         tmpStr = [NSString stringWithFormat:@"%d", mathUiDataObject.resultNumber];
         [mathUiLabelObject.resultNumberLabel setText: tmpStr];
+        [mathUiLabelObject.tapButton setHidden:!(self.showTapButton)];
     }
 }
 
+- (id)init
+{
+    D2Log(@"init called");
+    return [super init];
+}
+
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
+    D2Log(@"initWithNibName called");
+
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
@@ -146,6 +167,7 @@
     mathUiLabelObject.secondNumberLabel = r1c2;
     mathUiLabelObject.operandLabel      = r1op;
     mathUiLabelObject.resultNumberLabel = r1c3;
+    mathUiLabelObject.tapButton         = r1btn;
     [mathUiLabelObjectArr addObject:mathUiLabelObject];
     
     // 2nd object
@@ -154,6 +176,7 @@
     mathUiLabelObject.secondNumberLabel = r2c2;
     mathUiLabelObject.operandLabel      = r2op;
     mathUiLabelObject.resultNumberLabel = r2c3;
+    mathUiLabelObject.tapButton         = r2btn;
     [mathUiLabelObjectArr addObject:mathUiLabelObject];
     
     // 3rd object
@@ -162,6 +185,7 @@
     mathUiLabelObject.secondNumberLabel = r3c2;
     mathUiLabelObject.operandLabel      = r3op;
     mathUiLabelObject.resultNumberLabel = r3c3;
+    mathUiLabelObject.tapButton         = r3btn;
     [mathUiLabelObjectArr addObject:mathUiLabelObject];
     
     // 4th object
@@ -170,6 +194,7 @@
     mathUiLabelObject.secondNumberLabel = r4c2;
     mathUiLabelObject.operandLabel      = r4op;
     mathUiLabelObject.resultNumberLabel = r4c3;
+    mathUiLabelObject.tapButton         = r4btn;
     [mathUiLabelObjectArr addObject:mathUiLabelObject];
     
     // 5th object
@@ -178,6 +203,7 @@
     mathUiLabelObject.secondNumberLabel = r5c2;
     mathUiLabelObject.operandLabel      = r5op;
     mathUiLabelObject.resultNumberLabel = r5c3;
+    mathUiLabelObject.tapButton         = r5btn;
     [mathUiLabelObjectArr addObject:mathUiLabelObject];
     
     // 6th object
@@ -186,6 +212,7 @@
     mathUiLabelObject.secondNumberLabel = r6c2;
     mathUiLabelObject.operandLabel      = r6op;
     mathUiLabelObject.resultNumberLabel = r6c3;
+    mathUiLabelObject.tapButton         = r6btn;
     [mathUiLabelObjectArr addObject:mathUiLabelObject];
     
     // 7th object
@@ -194,6 +221,7 @@
     mathUiLabelObject.secondNumberLabel = r7c2;
     mathUiLabelObject.operandLabel      = r7op;
     mathUiLabelObject.resultNumberLabel = r7c3;
+    mathUiLabelObject.tapButton         = r7btn;
     [mathUiLabelObjectArr addObject:mathUiLabelObject];
     
     // 8th object
@@ -202,6 +230,7 @@
     mathUiLabelObject.secondNumberLabel = r8c2;
     mathUiLabelObject.operandLabel      = r8op;
     mathUiLabelObject.resultNumberLabel = r8c3;
+    mathUiLabelObject.tapButton         = r8btn;
     [mathUiLabelObjectArr addObject:mathUiLabelObject];
     
     // 9th object
@@ -210,6 +239,7 @@
     mathUiLabelObject.secondNumberLabel = r9c2;
     mathUiLabelObject.operandLabel      = r9op;
     mathUiLabelObject.resultNumberLabel = r9c3;
+    mathUiLabelObject.tapButton         = r9btn;
     [mathUiLabelObjectArr addObject:mathUiLabelObject];
     
     // 10th object
@@ -218,6 +248,7 @@
     mathUiLabelObject.secondNumberLabel = r10c2;
     mathUiLabelObject.operandLabel      = r10op;
     mathUiLabelObject.resultNumberLabel = r10c3;
+    mathUiLabelObject.tapButton         = r10btn;
     [mathUiLabelObjectArr addObject:mathUiLabelObject];
     
     

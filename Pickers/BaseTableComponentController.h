@@ -9,7 +9,9 @@
 #import <UIKit/UIKit.h>
 @class MathUILabelObject;
 
-@interface AddComponentController : UIViewController
+@interface BaseTableComponentController : UIViewController
+
+@property (nonatomic) BOOL showTapButton;
 
 @property (strong, nonatomic) IBOutlet UIStepper  *stepper;
 @property (strong, nonatomic) IBOutlet UISegmentedControl  *segmentControl;
@@ -20,10 +22,13 @@
 @property (strong, nonatomic) IBOutlet UILabel  *r1c2, *r2c2, *r3c2, *r4c2, *r5c2, *r6c2, *r7c2, *r8c2, *r9c2, *r10c2;
 @property (strong, nonatomic) IBOutlet UILabel  *r1c3, *r2c3, *r3c3, *r4c3, *r5c3, *r6c3, *r7c3, *r8c3, *r9c3, *r10c3;
 
+@property (strong, nonatomic) IBOutlet UIButton  *r1btn, *r2btn, *r3btn, *r4btn, *r5btn, *r6btn, *r7btn, *r8btn, *r9btn, *r10btn;
+
 @property (strong, nonatomic) NSMutableArray* mathUiLabelObjectArr;
 
 - (IBAction)toggleOperand:(id)sender;
 - (IBAction)shufflePressed:(UISwitch*)sender;
 - (IBAction)stepperPressed:(UIStepper *)sender;
+- (IBAction)tapButtonPressed:(UIButton *)sender;
 
 @end

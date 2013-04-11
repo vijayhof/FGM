@@ -14,4 +14,6 @@
 
 @property (nonatomic) UILabel* resultNumberLabel;
 
+@property (nonatomic) UIButton* tapButton;
+
 @end

@@ -10,5 +10,6 @@
 @synthesize secondNumberLabel;
 @synthesize operandLabel;
 @synthesize resultNumberLabel;
+@synthesize tapButton;
 
 @end
