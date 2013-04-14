@@ -22,7 +22,7 @@
 @synthesize  r1c2, r2c2, r3c2, r4c2, r5c2, r6c2, r7c2, r8c2, r9c2, r10c2;
 @synthesize  r1c3, r2c3, r3c3, r4c3, r5c3, r6c3, r7c3, r8c3, r9c3, r10c3;
 @synthesize  r1btn, r2btn, r3btn, r4btn, r5btn, r6btn, r7btn, r8btn, r9btn, r10btn;
-@synthesize  mathUiLabelObjectArr;
+@synthesize  mathUiControlObjectArr;
 
 - (BOOL)showTapButton
 {
@@ -78,21 +78,21 @@
     int maxSize = [Utility getMaxNumberArraySize];
     
     MathUIDataObject* mathUiDataObject = nil;
-    MathUIControlObject* mathUiLabelObject = nil;
+    MathUIControlObject* mathUiControlObject = nil;
     for(int i = 0; i < maxSize; i++)
     {
         mathUiDataObject = (MathUIDataObject*)[dataObj objectAtIndex:i];
-        mathUiLabelObject = (MathUIControlObject*)[mathUiLabelObjectArr objectAtIndex:i];
+        mathUiControlObject = (MathUIControlObject*)[mathUiControlObjectArr objectAtIndex:i];
         
         tmpStr = [NSString stringWithFormat:@"%d", mathUiDataObject.firstNumber];
-        [mathUiLabelObject.firstNumberLabel setText: tmpStr];
+        [mathUiControlObject.firstNumberLabel setText: tmpStr];
         tmpStr = [NSString stringWithFormat:@"%d", mathUiDataObject.secondNumber];
-        [mathUiLabelObject.secondNumberLabel setText: tmpStr];
+        [mathUiControlObject.secondNumberLabel setText: tmpStr];
         tmpStr = [MathUtility getOperandSymbol:mathUiDataObject.operand];
-        [mathUiLabelObject.operandLabel setText: tmpStr];
+        [mathUiControlObject.operandLabel setText: tmpStr];
         tmpStr = [NSString stringWithFormat:@"%d", mathUiDataObject.resultNumber];
-        [mathUiLabelObject.resultNumberLabel setText: tmpStr];
-        [mathUiLabelObject.tapButton setHidden:!(self.showTapButton)];
+        [mathUiControlObject.resultNumberLabel setText: tmpStr];
+        [mathUiControlObject.tapButton setHidden:!(self.showTapButton)];
     }
 }
 
@@ -156,99 +156,99 @@
     // TODO - assumption is that there are only 10 numbers supported.
     // TODO - use ivar or similar approach to initialize label array. using obj c introspection / reflection method
     
-    mathUiLabelObjectArr = [[NSMutableArray alloc] initWithCapacity:maxSize];
+    mathUiControlObjectArr = [[NSMutableArray alloc] initWithCapacity:maxSize];
     
-    MathUIControlObject* mathUiLabelObject = nil;
+    MathUIControlObject* mathUiControlObject = nil;
     
     // 1st object
-    mathUiLabelObject = [[MathUIControlObject alloc] init];
-    mathUiLabelObject.firstNumberLabel  = r1c1;
-    mathUiLabelObject.secondNumberLabel = r1c2;
-    mathUiLabelObject.operandLabel      = r1op;
-    mathUiLabelObject.resultNumberLabel = r1c3;
-    mathUiLabelObject.tapButton         = r1btn;
-    [mathUiLabelObjectArr addObject:mathUiLabelObject];
+    mathUiControlObject = [[MathUIControlObject alloc] init];
+    mathUiControlObject.firstNumberLabel  = r1c1;
+    mathUiControlObject.secondNumberLabel = r1c2;
+    mathUiControlObject.operandLabel      = r1op;
+    mathUiControlObject.resultNumberLabel = r1c3;
+    mathUiControlObject.tapButton         = r1btn;
+    [mathUiControlObjectArr addObject:mathUiControlObject];
     
     // 2nd object
-    mathUiLabelObject = [[MathUIControlObject alloc] init];
-    mathUiLabelObject.firstNumberLabel  = r2c1;
-    mathUiLabelObject.secondNumberLabel = r2c2;
-    mathUiLabelObject.operandLabel      = r2op;
-    mathUiLabelObject.resultNumberLabel = r2c3;
-    mathUiLabelObject.tapButton         = r2btn;
-    [mathUiLabelObjectArr addObject:mathUiLabelObject];
+    mathUiControlObject = [[MathUIControlObject alloc] init];
+    mathUiControlObject.firstNumberLabel  = r2c1;
+    mathUiControlObject.secondNumberLabel = r2c2;
+    mathUiControlObject.operandLabel      = r2op;
+    mathUiControlObject.resultNumberLabel = r2c3;
+    mathUiControlObject.tapButton         = r2btn;
+    [mathUiControlObjectArr addObject:mathUiControlObject];
     
     // 3rd object
-    mathUiLabelObject = [[MathUIControlObject alloc] init];
-    mathUiLabelObject.firstNumberLabel  = r3c1;
-    mathUiLabelObject.secondNumberLabel = r3c2;
-    mathUiLabelObject.operandLabel      = r3op;
-    mathUiLabelObject.resultNumberLabel = r3c3;
-    mathUiLabelObject.tapButton         = r3btn;
-    [mathUiLabelObjectArr addObject:mathUiLabelObject];
+    mathUiControlObject = [[MathUIControlObject alloc] init];
+    mathUiControlObject.firstNumberLabel  = r3c1;
+    mathUiControlObject.secondNumberLabel = r3c2;
+    mathUiControlObject.operandLabel      = r3op;
+    mathUiControlObject.resultNumberLabel = r3c3;
+    mathUiControlObject.tapButton         = r3btn;
+    [mathUiControlObjectArr addObject:mathUiControlObject];
     
     // 4th object
-    mathUiLabelObject = [[MathUIControlObject alloc] init];
-    mathUiLabelObject.firstNumberLabel  = r4c1;
-    mathUiLabelObject.secondNumberLabel = r4c2;
-    mathUiLabelObject.operandLabel      = r4op;
-    mathUiLabelObject.resultNumberLabel = r4c3;
-    mathUiLabelObject.tapButton         = r4btn;
-    [mathUiLabelObjectArr addObject:mathUiLabelObject];
+    mathUiControlObject = [[MathUIControlObject alloc] init];
+    mathUiControlObject.firstNumberLabel  = r4c1;
+    mathUiControlObject.secondNumberLabel = r4c2;
+    mathUiControlObject.operandLabel      = r4op;
+    mathUiControlObject.resultNumberLabel = r4c3;
+    mathUiControlObject.tapButton         = r4btn;
+    [mathUiControlObjectArr addObject:mathUiControlObject];
     
     // 5th object
-    mathUiLabelObject = [[MathUIControlObject alloc] init];
-    mathUiLabelObject.firstNumberLabel  = r5c1;
-    mathUiLabelObject.secondNumberLabel = r5c2;
-    mathUiLabelObject.operandLabel      = r5op;
-    mathUiLabelObject.resultNumberLabel = r5c3;
-    mathUiLabelObject.tapButton         = r5btn;
-    [mathUiLabelObjectArr addObject:mathUiLabelObject];
+    mathUiControlObject = [[MathUIControlObject alloc] init];
+    mathUiControlObject.firstNumberLabel  = r5c1;
+    mathUiControlObject.secondNumberLabel = r5c2;
+    mathUiControlObject.operandLabel      = r5op;
+    mathUiControlObject.resultNumberLabel = r5c3;
+    mathUiControlObject.tapButton         = r5btn;
+    [mathUiControlObjectArr addObject:mathUiControlObject];
     
     // 6th object
-    mathUiLabelObject = [[MathUIControlObject alloc] init];
-    mathUiLabelObject.firstNumberLabel  = r6c1;
-    mathUiLabelObject.secondNumberLabel = r6c2;
-    mathUiLabelObject.operandLabel      = r6op;
-    mathUiLabelObject.resultNumberLabel = r6c3;
-    mathUiLabelObject.tapButton         = r6btn;
-    [mathUiLabelObjectArr addObject:mathUiLabelObject];
+    mathUiControlObject = [[MathUIControlObject alloc] init];
+    mathUiControlObject.firstNumberLabel  = r6c1;
+    mathUiControlObject.secondNumberLabel = r6c2;
+    mathUiControlObject.operandLabel      = r6op;
+    mathUiControlObject.resultNumberLabel = r6c3;
+    mathUiControlObject.tapButton         = r6btn;
+    [mathUiControlObjectArr addObject:mathUiControlObject];
     
     // 7th object
-    mathUiLabelObject = [[MathUIControlObject alloc] init];
-    mathUiLabelObject.firstNumberLabel  = r7c1;
-    mathUiLabelObject.secondNumberLabel = r7c2;
-    mathUiLabelObject.operandLabel      = r7op;
-    mathUiLabelObject.resultNumberLabel = r7c3;
-    mathUiLabelObject.tapButton         = r7btn;
-    [mathUiLabelObjectArr addObject:mathUiLabelObject];
+    mathUiControlObject = [[MathUIControlObject alloc] init];
+    mathUiControlObject.firstNumberLabel  = r7c1;
+    mathUiControlObject.secondNumberLabel = r7c2;
+    mathUiControlObject.operandLabel      = r7op;
+    mathUiControlObject.resultNumberLabel = r7c3;
+    mathUiControlObject.tapButton         = r7btn;
+    [mathUiControlObjectArr addObject:mathUiControlObject];
     
     // 8th object
-    mathUiLabelObject = [[MathUIControlObject alloc] init];
-    mathUiLabelObject.firstNumberLabel  = r8c1;
-    mathUiLabelObject.secondNumberLabel = r8c2;
-    mathUiLabelObject.operandLabel      = r8op;
-    mathUiLabelObject.resultNumberLabel = r8c3;
-    mathUiLabelObject.tapButton         = r8btn;
-    [mathUiLabelObjectArr addObject:mathUiLabelObject];
+    mathUiControlObject = [[MathUIControlObject alloc] init];
+    mathUiControlObject.firstNumberLabel  = r8c1;
+    mathUiControlObject.secondNumberLabel = r8c2;
+    mathUiControlObject.operandLabel      = r8op;
+    mathUiControlObject.resultNumberLabel = r8c3;
+    mathUiControlObject.tapButton         = r8btn;
+    [mathUiControlObjectArr addObject:mathUiControlObject];
     
     // 9th object
-    mathUiLabelObject = [[MathUIControlObject alloc] init];
-    mathUiLabelObject.firstNumberLabel  = r9c1;
-    mathUiLabelObject.secondNumberLabel = r9c2;
-    mathUiLabelObject.operandLabel      = r9op;
-    mathUiLabelObject.resultNumberLabel = r9c3;
-    mathUiLabelObject.tapButton         = r9btn;
-    [mathUiLabelObjectArr addObject:mathUiLabelObject];
+    mathUiControlObject = [[MathUIControlObject alloc] init];
+    mathUiControlObject.firstNumberLabel  = r9c1;
+    mathUiControlObject.secondNumberLabel = r9c2;
+    mathUiControlObject.operandLabel      = r9op;
+    mathUiControlObject.resultNumberLabel = r9c3;
+    mathUiControlObject.tapButton         = r9btn;
+    [mathUiControlObjectArr addObject:mathUiControlObject];
     
     // 10th object
-    mathUiLabelObject = [[MathUIControlObject alloc] init];
-    mathUiLabelObject.firstNumberLabel  = r10c1;
-    mathUiLabelObject.secondNumberLabel = r10c2;
-    mathUiLabelObject.operandLabel      = r10op;
-    mathUiLabelObject.resultNumberLabel = r10c3;
-    mathUiLabelObject.tapButton         = r10btn;
-    [mathUiLabelObjectArr addObject:mathUiLabelObject];
+    mathUiControlObject = [[MathUIControlObject alloc] init];
+    mathUiControlObject.firstNumberLabel  = r10c1;
+    mathUiControlObject.secondNumberLabel = r10c2;
+    mathUiControlObject.operandLabel      = r10op;
+    mathUiControlObject.resultNumberLabel = r10c3;
+    mathUiControlObject.tapButton         = r10btn;
+    [mathUiControlObjectArr addObject:mathUiControlObject];
     
     
     [self bindData:[MathUtility getMathUIObjectArray]];

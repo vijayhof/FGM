@@ -1,5 +1,5 @@
 //
-//  MathUILabelObject.h
+//  MathUIControlObject.h
 //
 
 #import <Foundation/Foundation.h>

@@ -22,7 +22,7 @@
 @property (strong,nonatomic) NSMutableString* userEnteredNumber;
 
 // UI object structure to hold the UI controls for the top question and answer UI
-@property (strong,nonatomic) MathUIControlObject* mathUiLabelObject;
+@property (strong,nonatomic) MathUIControlObject* mathUiControlObject;
 
 
 @property (strong, nonatomic) IBOutlet UIStepper  *stepper;

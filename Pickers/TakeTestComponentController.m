@@ -18,7 +18,7 @@
 @synthesize curIndex;
 @synthesize userEnteredNumber;
 
-@synthesize mathUiLabelObject;
+@synthesize mathUiControlObject;
 
 @synthesize stepper;
 @synthesize shuffleSwitch;
@@ -79,8 +79,8 @@
 {
     D2Log(@"numberButtonPressed %d", sender.tag);
     [userEnteredNumber appendFormat:@"%d",sender.tag];
-    [mathUiLabelObject.resultNumberLabel setText:userEnteredNumber];
-    mathUiLabelObject.resultNumberLabel.textColor = [UIColor blackColor];
+    [mathUiControlObject.resultNumberLabel setText:userEnteredNumber];
+    mathUiControlObject.resultNumberLabel.textColor = [UIColor blackColor];
 
 }
 
@@ -91,7 +91,7 @@
 {
     D2Log(@"clrButtonPressed");
     [userEnteredNumber setString:@""];
-    [mathUiLabelObject.resultNumberLabel setText:@""];
+    [mathUiControlObject.resultNumberLabel setText:@""];
 }
 
 //
@@ -108,12 +108,12 @@
 
     if(actualResultInt != userEnteredNumberInt)
     {
-        mathUiLabelObject.resultNumberLabel.textColor = [UIColor redColor];
+        mathUiControlObject.resultNumberLabel.textColor = [UIColor redColor];
         [userEnteredNumber setString:@""];
         return;
     }
 
-    mathUiLabelObject.resultNumberLabel.textColor = [UIColor blackColor];
+    mathUiControlObject.resultNumberLabel.textColor = [UIColor blackColor];
 
     [userEnteredNumber setString:@""];
     
@@ -158,14 +158,14 @@
     MathUIDataObject* mathUiDataObject = (MathUIDataObject*)[mathUiDataObjectArr objectAtIndex:curIndex];
     
     tmpStr = [NSString stringWithFormat:@"%d", mathUiDataObject.firstNumber];
-    [mathUiLabelObject.firstNumberLabel setText: tmpStr];
+    [mathUiControlObject.firstNumberLabel setText: tmpStr];
     tmpStr = [NSString stringWithFormat:@"%d", mathUiDataObject.secondNumber];
-    [mathUiLabelObject.secondNumberLabel setText: tmpStr];
+    [mathUiControlObject.secondNumberLabel setText: tmpStr];
     tmpStr = [MathUtility getOperandSymbol:mathUiDataObject.operand];
-    [mathUiLabelObject.operandLabel setText: tmpStr];
+    [mathUiControlObject.operandLabel setText: tmpStr];
 
     // hide the answer
-    [mathUiLabelObject.resultNumberLabel setText:@""];
+    [mathUiControlObject.resultNumberLabel setText:@""];
 }
 
 - (id)init
@@ -227,11 +227,11 @@
     }
     
     // top label object
-    mathUiLabelObject = [[MathUIControlObject alloc] init];
-    mathUiLabelObject.firstNumberLabel  = r1c1;
-    mathUiLabelObject.secondNumberLabel = r1c2;
-    mathUiLabelObject.operandLabel      = r1op;
-    mathUiLabelObject.resultNumberLabel = r1c3;
+    mathUiControlObject = [[MathUIControlObject alloc] init];
+    mathUiControlObject.firstNumberLabel  = r1c1;
+    mathUiControlObject.secondNumberLabel = r1c2;
+    mathUiControlObject.operandLabel      = r1op;
+    mathUiControlObject.resultNumberLabel = r1c3;
     
     // reset the data object (array) to be used for the flow
     [self resetData];

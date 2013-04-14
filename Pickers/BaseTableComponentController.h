@@ -24,7 +24,7 @@
 
 @property (strong, nonatomic) IBOutlet UIButton  *r1btn, *r2btn, *r3btn, *r4btn, *r5btn, *r6btn, *r7btn, *r8btn, *r9btn, *r10btn;
 
-@property (strong, nonatomic) NSMutableArray* mathUiLabelObjectArr;
+@property (strong, nonatomic) NSMutableArray* mathUiControlObjectArr;
 
 - (IBAction)toggleOperand:(id)sender;
 - (IBAction)shufflePressed:(UISwitch*)sender;
