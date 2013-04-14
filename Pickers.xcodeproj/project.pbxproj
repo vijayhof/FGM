@@ -10,8 +10,11 @@
 		23F7F5C6142A9D92005DE8A3 /* BIDDependentComponentPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23F7F5C5142A9D92005DE8A3 /* BIDDependentComponentPickerViewController.m */; };
 		6705D2351711E9AA0097E0A8 /* TapButtonTableComponentController.h in Resources */ = {isa = PBXBuildFile; fileRef = 6705D2341711E9AA0097E0A8 /* TapButtonTableComponentController.h */; };
 		6705D2371711EA040097E0A8 /* TapButtonTableComponentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6705D2361711EA030097E0A8 /* TapButtonTableComponentController.m */; };
-		6719E40916D9530700C1D2C6 /* MathUILabelObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 6719E40816D9530700C1D2C6 /* MathUILabelObject.m */; };
+		6719E40916D9530700C1D2C6 /* MathUIControlObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 6719E40816D9530700C1D2C6 /* MathUIControlObject.m */; };
 		6719E42616DADF2A00C1D2C6 /* BaseTableComponentController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6719E42516DADF2A00C1D2C6 /* BaseTableComponentController.xib */; };
+		6746B2C11719D30E0029E835 /* TakeTestComponentController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6746B2C01719D30E0029E835 /* TakeTestComponentController.xib */; };
+		6746B2C3171A04A40029E835 /* TakeTestComponentController.h in Resources */ = {isa = PBXBuildFile; fileRef = 6746B2C2171A04A40029E835 /* TakeTestComponentController.h */; };
+		6746B2C5171A05860029E835 /* TakeTestComponentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6746B2C4171A05860029E835 /* TakeTestComponentController.m */; };
 		67C2370416C9F0D9003D0878 /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 67C2370316C7366B003D0878 /* Utility.m */; };
 		67C2370816CAF125003D0878 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 67C2370716CAF125003D0878 /* AppDelegate.m */; };
 		67C2370F16CB35C8003D0878 /* MathUIDataObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 67C2370E16CB35C8003D0878 /* MathUIDataObject.m */; };
@@ -51,9 +54,12 @@
 		23F7F5C5142A9D92005DE8A3 /* BIDDependentComponentPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BIDDependentComponentPickerViewController.m; sourceTree = "<group>"; };
 		6705D2341711E9AA0097E0A8 /* TapButtonTableComponentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TapButtonTableComponentController.h; sourceTree = "<group>"; };
 		6705D2361711EA030097E0A8 /* TapButtonTableComponentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TapButtonTableComponentController.m; sourceTree = "<group>"; };
-		6719E40716D9530700C1D2C6 /* MathUILabelObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MathUILabelObject.h; sourceTree = "<group>"; };
-		6719E40816D9530700C1D2C6 /* MathUILabelObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MathUILabelObject.m; sourceTree = "<group>"; };
+		6719E40716D9530700C1D2C6 /* MathUIControlObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MathUIControlObject.h; sourceTree = "<group>"; };
+		6719E40816D9530700C1D2C6 /* MathUIControlObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MathUIControlObject.m; sourceTree = "<group>"; };
 		6719E42516DADF2A00C1D2C6 /* BaseTableComponentController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BaseTableComponentController.xib; sourceTree = "<group>"; };
+		6746B2C01719D30E0029E835 /* TakeTestComponentController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TakeTestComponentController.xib; sourceTree = "<group>"; };
+		6746B2C2171A04A40029E835 /* TakeTestComponentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TakeTestComponentController.h; sourceTree = "<group>"; };
+		6746B2C4171A05860029E835 /* TakeTestComponentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TakeTestComponentController.m; sourceTree = "<group>"; };
 		67C236FA16C73454003D0878 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		67C236FE16C73609003D0878 /* PersistentApplicationData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PersistentApplicationData.h; sourceTree = "<group>"; };
 		67C236FF16C73609003D0878 /* PersistentApplicationData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PersistentApplicationData.m; sourceTree = "<group>"; };
@@ -120,27 +126,54 @@
 		6719E40B16D9A29000C1D2C6 /* Current */ = {
 			isa = PBXGroup;
 			children = (
+				6746B2BC1719D2700029E835 /* xib */,
+				6746B2BF1719D2A50029E835 /* controller etc */,
+				6746B2BE1719D2800029E835 /* common */,
+			);
+			name = Current;
+			sourceTree = "<group>";
+		};
+		6746B2BC1719D2700029E835 /* xib */ = {
+			isa = PBXGroup;
+			children = (
 				817C007C13FC5F250082747C /* TabBarController.xib */,
-				817C005D13FBE8F60082747C /* BaseTableComponentController.h */,
-				817C005E13FBE8F60082747C /* BaseTableComponentController.m */,
 				6719E42516DADF2A00C1D2C6 /* BaseTableComponentController.xib */,
-				6705D2341711E9AA0097E0A8 /* TapButtonTableComponentController.h */,
-				6705D2361711EA030097E0A8 /* TapButtonTableComponentController.m */,
-				817C004B13FBE5100082747C /* AppDelegate.h */,
-				67C2370716CAF125003D0878 /* AppDelegate.m */,
+				6746B2C01719D30E0029E835 /* TakeTestComponentController.xib */,
+			);
+			name = xib;
+			sourceTree = "<group>";
+		};
+		6746B2BE1719D2800029E835 /* common */ = {
+			isa = PBXGroup;
+			children = (
 				67C236FA16C73454003D0878 /* Constants.h */,
-				67C2370D16CB35C7003D0878 /* MathUIDataObject.h */,
-				67C2370E16CB35C8003D0878 /* MathUIDataObject.m */,
-				6719E40716D9530700C1D2C6 /* MathUILabelObject.h */,
-				6719E40816D9530700C1D2C6 /* MathUILabelObject.m */,
-				67C236FE16C73609003D0878 /* PersistentApplicationData.h */,
-				67C236FF16C73609003D0878 /* PersistentApplicationData.m */,
 				67C2370216C7366B003D0878 /* Utility.h */,
 				67C2370316C7366B003D0878 /* Utility.m */,
 				67C2371016CD4B97003D0878 /* MathUtility.h */,
 				67C2371116CD4B97003D0878 /* MathUtility.m */,
+				67C2370D16CB35C7003D0878 /* MathUIDataObject.h */,
+				67C2370E16CB35C8003D0878 /* MathUIDataObject.m */,
+				6719E40716D9530700C1D2C6 /* MathUIControlObject.h */,
+				6719E40816D9530700C1D2C6 /* MathUIControlObject.m */,
+				67C236FE16C73609003D0878 /* PersistentApplicationData.h */,
+				67C236FF16C73609003D0878 /* PersistentApplicationData.m */,
 			);
-			name = Current;
+			name = common;
+			sourceTree = "<group>";
+		};
+		6746B2BF1719D2A50029E835 /* controller etc */ = {
+			isa = PBXGroup;
+			children = (
+				817C005D13FBE8F60082747C /* BaseTableComponentController.h */,
+				817C005E13FBE8F60082747C /* BaseTableComponentController.m */,
+				6705D2341711E9AA0097E0A8 /* TapButtonTableComponentController.h */,
+				6705D2361711EA030097E0A8 /* TapButtonTableComponentController.m */,
+				6746B2C2171A04A40029E835 /* TakeTestComponentController.h */,
+				6746B2C4171A05860029E835 /* TakeTestComponentController.m */,
+				817C004B13FBE5100082747C /* AppDelegate.h */,
+				67C2370716CAF125003D0878 /* AppDelegate.m */,
+			);
+			name = "controller etc";
 			sourceTree = "<group>";
 		};
 		817C002F13FBE5100082747C = {
@@ -313,6 +346,8 @@
 				81F55CB213FEFF1F00299C77 /* win.wav in Resources */,
 				6719E42616DADF2A00C1D2C6 /* BaseTableComponentController.xib in Resources */,
 				6705D2351711E9AA0097E0A8 /* TapButtonTableComponentController.h in Resources */,
+				6746B2C11719D30E0029E835 /* TakeTestComponentController.xib in Resources */,
+				6746B2C3171A04A40029E835 /* TakeTestComponentController.h in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,8 +369,9 @@
 				67C2370816CAF125003D0878 /* AppDelegate.m in Sources */,
 				67C2370F16CB35C8003D0878 /* MathUIDataObject.m in Sources */,
 				67C2371216CD4B98003D0878 /* MathUtility.m in Sources */,
-				6719E40916D9530700C1D2C6 /* MathUILabelObject.m in Sources */,
+				6719E40916D9530700C1D2C6 /* MathUIControlObject.m in Sources */,
 				6705D2371711EA040097E0A8 /* TapButtonTableComponentController.m in Sources */,
+				6746B2C5171A05860029E835 /* TakeTestComponentController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

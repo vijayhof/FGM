@@ -4,7 +4,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface MathUILabelObject : NSObject
+@interface MathUIControlObject : NSObject
 
 @property (nonatomic) UILabel* firstNumberLabel;
 

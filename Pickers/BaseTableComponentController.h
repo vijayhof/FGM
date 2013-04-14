@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-@class MathUILabelObject;
+@class MathUIControlObject;
 
 @interface BaseTableComponentController : UIViewController
 

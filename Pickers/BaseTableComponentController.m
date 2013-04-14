@@ -7,7 +7,7 @@
 //
 #import "Constants.h"
 #import "BaseTableComponentController.h"
-#import "MathUILabelObject.h"
+#import "MathUIControlObject.h"
 #import "MathUIDataObject.h"
 #import "Utility.h"
 #import "MathUtility.h"
@@ -78,11 +78,11 @@
     int maxSize = [Utility getMaxNumberArraySize];
     
     MathUIDataObject* mathUiDataObject = nil;
-    MathUILabelObject* mathUiLabelObject = nil;
+    MathUIControlObject* mathUiLabelObject = nil;
     for(int i = 0; i < maxSize; i++)
     {
         mathUiDataObject = (MathUIDataObject*)[dataObj objectAtIndex:i];
-        mathUiLabelObject = (MathUILabelObject*)[mathUiLabelObjectArr objectAtIndex:i];
+        mathUiLabelObject = (MathUIControlObject*)[mathUiLabelObjectArr objectAtIndex:i];
         
         tmpStr = [NSString stringWithFormat:@"%d", mathUiDataObject.firstNumber];
         [mathUiLabelObject.firstNumberLabel setText: tmpStr];
@@ -158,10 +158,10 @@
     
     mathUiLabelObjectArr = [[NSMutableArray alloc] initWithCapacity:maxSize];
     
-    MathUILabelObject* mathUiLabelObject = nil;
+    MathUIControlObject* mathUiLabelObject = nil;
     
     // 1st object
-    mathUiLabelObject = [[MathUILabelObject alloc] init];
+    mathUiLabelObject = [[MathUIControlObject alloc] init];
     mathUiLabelObject.firstNumberLabel  = r1c1;
     mathUiLabelObject.secondNumberLabel = r1c2;
     mathUiLabelObject.operandLabel      = r1op;
@@ -170,7 +170,7 @@
     [mathUiLabelObjectArr addObject:mathUiLabelObject];
     
     // 2nd object
-    mathUiLabelObject = [[MathUILabelObject alloc] init];
+    mathUiLabelObject = [[MathUIControlObject alloc] init];
     mathUiLabelObject.firstNumberLabel  = r2c1;
     mathUiLabelObject.secondNumberLabel = r2c2;
     mathUiLabelObject.operandLabel      = r2op;
@@ -179,7 +179,7 @@
     [mathUiLabelObjectArr addObject:mathUiLabelObject];
     
     // 3rd object
-    mathUiLabelObject = [[MathUILabelObject alloc] init];
+    mathUiLabelObject = [[MathUIControlObject alloc] init];
     mathUiLabelObject.firstNumberLabel  = r3c1;
     mathUiLabelObject.secondNumberLabel = r3c2;
     mathUiLabelObject.operandLabel      = r3op;
@@ -188,7 +188,7 @@
     [mathUiLabelObjectArr addObject:mathUiLabelObject];
     
     // 4th object
-    mathUiLabelObject = [[MathUILabelObject alloc] init];
+    mathUiLabelObject = [[MathUIControlObject alloc] init];
     mathUiLabelObject.firstNumberLabel  = r4c1;
     mathUiLabelObject.secondNumberLabel = r4c2;
     mathUiLabelObject.operandLabel      = r4op;
@@ -197,7 +197,7 @@
     [mathUiLabelObjectArr addObject:mathUiLabelObject];
     
     // 5th object
-    mathUiLabelObject = [[MathUILabelObject alloc] init];
+    mathUiLabelObject = [[MathUIControlObject alloc] init];
     mathUiLabelObject.firstNumberLabel  = r5c1;
     mathUiLabelObject.secondNumberLabel = r5c2;
     mathUiLabelObject.operandLabel      = r5op;
@@ -206,7 +206,7 @@
     [mathUiLabelObjectArr addObject:mathUiLabelObject];
     
     // 6th object
-    mathUiLabelObject = [[MathUILabelObject alloc] init];
+    mathUiLabelObject = [[MathUIControlObject alloc] init];
     mathUiLabelObject.firstNumberLabel  = r6c1;
     mathUiLabelObject.secondNumberLabel = r6c2;
     mathUiLabelObject.operandLabel      = r6op;
@@ -215,7 +215,7 @@
     [mathUiLabelObjectArr addObject:mathUiLabelObject];
     
     // 7th object
-    mathUiLabelObject = [[MathUILabelObject alloc] init];
+    mathUiLabelObject = [[MathUIControlObject alloc] init];
     mathUiLabelObject.firstNumberLabel  = r7c1;
     mathUiLabelObject.secondNumberLabel = r7c2;
     mathUiLabelObject.operandLabel      = r7op;
@@ -224,7 +224,7 @@
     [mathUiLabelObjectArr addObject:mathUiLabelObject];
     
     // 8th object
-    mathUiLabelObject = [[MathUILabelObject alloc] init];
+    mathUiLabelObject = [[MathUIControlObject alloc] init];
     mathUiLabelObject.firstNumberLabel  = r8c1;
     mathUiLabelObject.secondNumberLabel = r8c2;
     mathUiLabelObject.operandLabel      = r8op;
@@ -233,7 +233,7 @@
     [mathUiLabelObjectArr addObject:mathUiLabelObject];
     
     // 9th object
-    mathUiLabelObject = [[MathUILabelObject alloc] init];
+    mathUiLabelObject = [[MathUIControlObject alloc] init];
     mathUiLabelObject.firstNumberLabel  = r9c1;
     mathUiLabelObject.secondNumberLabel = r9c2;
     mathUiLabelObject.operandLabel      = r9op;
@@ -242,7 +242,7 @@
     [mathUiLabelObjectArr addObject:mathUiLabelObject];
     
     // 10th object
-    mathUiLabelObject = [[MathUILabelObject alloc] init];
+    mathUiLabelObject = [[MathUIControlObject alloc] init];
     mathUiLabelObject.firstNumberLabel  = r10c1;
     mathUiLabelObject.secondNumberLabel = r10c2;
     mathUiLabelObject.operandLabel      = r10op;

@@ -2,9 +2,9 @@
 //  MathUILabelObject.m
 //
 
-#import "MathUILabelObject.h"
+#import "MathUIControlObject.h"
 
-@implementation MathUILabelObject
+@implementation MathUIControlObject
 
 @synthesize firstNumberLabel;
 @synthesize secondNumberLabel;
