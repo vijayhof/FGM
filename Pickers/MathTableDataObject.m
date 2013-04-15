@@ -1,10 +1,10 @@
 //
-//  MathUIDataObject.m
+//  MathTableDataObject.m
 //
 
-#import "MathUIDataObject.h"
+#import "MathTableDataObject.h"
 
-@implementation MathUIDataObject
+@implementation MathTableDataObject
 
 @synthesize firstNumber;
 @synthesize secondNumber;

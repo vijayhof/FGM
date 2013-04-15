@@ -49,7 +49,6 @@
 //
 + (PersistentApplicationData *)readFromArchive
 {
-    
     NSData *data = [[NSMutableData alloc]
                     initWithContentsOfFile:[self dataFilePath]];
     NSKeyedUnarchiver *unarchiver = [[NSKeyedUnarchiver alloc]

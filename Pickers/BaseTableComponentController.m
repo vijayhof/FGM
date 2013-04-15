@@ -1,5 +1,5 @@
 //
-//  BIDSingleComponentPickerViewController.m
+//  BaseTableComponentController.m
 //  Pickers
 //
 //  Created by Dave Mark on 8/17/11.
@@ -8,7 +8,7 @@
 #import "Constants.h"
 #import "BaseTableComponentController.h"
 #import "MathUIControlObject.h"
-#import "MathUIDataObject.h"
+#import "MathTableDataObject.h"
 #import "Utility.h"
 #import "MathUtility.h"
 
@@ -77,20 +77,20 @@
     NSString* tmpStr = nil;
     int maxSize = [Utility getMaxNumberArraySize];
     
-    MathUIDataObject* mathUiDataObject = nil;
+    MathTableDataObject* mathTableDataObject = nil;
     MathUIControlObject* mathUiControlObject = nil;
     for(int i = 0; i < maxSize; i++)
     {
-        mathUiDataObject = (MathUIDataObject*)[dataObj objectAtIndex:i];
+        mathTableDataObject = (MathTableDataObject*)[dataObj objectAtIndex:i];
         mathUiControlObject = (MathUIControlObject*)[mathUiControlObjectArr objectAtIndex:i];
         
-        tmpStr = [NSString stringWithFormat:@"%d", mathUiDataObject.firstNumber];
+        tmpStr = [NSString stringWithFormat:@"%d", mathTableDataObject.firstNumber];
         [mathUiControlObject.firstNumberLabel setText: tmpStr];
-        tmpStr = [NSString stringWithFormat:@"%d", mathUiDataObject.secondNumber];
+        tmpStr = [NSString stringWithFormat:@"%d", mathTableDataObject.secondNumber];
         [mathUiControlObject.secondNumberLabel setText: tmpStr];
-        tmpStr = [MathUtility getOperandSymbol:mathUiDataObject.operand];
+        tmpStr = [MathUtility getOperandSymbol:mathTableDataObject.operand];
         [mathUiControlObject.operandLabel setText: tmpStr];
-        tmpStr = [NSString stringWithFormat:@"%d", mathUiDataObject.resultNumber];
+        tmpStr = [NSString stringWithFormat:@"%d", mathTableDataObject.resultNumber];
         [mathUiControlObject.resultNumberLabel setText: tmpStr];
         [mathUiControlObject.tapButton setHidden:!(self.showTapButton)];
     }

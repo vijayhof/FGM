@@ -1,5 +1,5 @@
 //
-//  BIDAppDelegate.m
+//  AppDelegate.m
 //  Pickers
 //
 //  Created by Dave Mark on 8/17/11.

@@ -1,10 +1,10 @@
 //
-//  MathUIDataObject.h
+//  MathTableDataObject.h
 //
 
 #import <Foundation/Foundation.h>
 
-@interface MathUIDataObject : NSObject
+@interface MathTableDataObject : NSObject
 
 // array of first numbers
 @property (nonatomic) int firstNumber;

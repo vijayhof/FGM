@@ -1,5 +1,5 @@
 //
-//  BIDSingleComponentPickerViewController.m
+//  TakeTestComponentController.m
 //  Pickers
 //
 //  Created by Dave Mark on 8/17/11.
@@ -8,13 +8,13 @@
 #import "Constants.h"
 #import "TakeTestComponentController.h"
 #import "MathUIControlObject.h"
-#import "MathUIDataObject.h"
+#import "MathTableDataObject.h"
 #import "Utility.h"
 #import "MathUtility.h"
 
 @implementation TakeTestComponentController
 
-@synthesize mathUiDataObjectArr;
+@synthesize mathTableDataObjectArr;
 @synthesize curIndex;
 @synthesize userEnteredNumber;
 
@@ -77,11 +77,10 @@
 //
 - (IBAction)numberButtonPressed:(UIButton *)sender
 {
-    D2Log(@"numberButtonPressed %d", sender.tag);
+//    D2Log(@"numberButtonPressed %d", sender.tag);
     [userEnteredNumber appendFormat:@"%d",sender.tag];
     [mathUiControlObject.resultNumberLabel setText:userEnteredNumber];
     mathUiControlObject.resultNumberLabel.textColor = [UIColor blackColor];
-
 }
 
 //
@@ -89,7 +88,7 @@
 //
 - (IBAction)clrButtonPressed:(UIButton *)sender
 {
-    D2Log(@"clrButtonPressed");
+//    D2Log(@"clrButtonPressed");
     [userEnteredNumber setString:@""];
     [mathUiControlObject.resultNumberLabel setText:@""];
 }
@@ -99,12 +98,12 @@
 //
 - (IBAction)goButtonPressed:(UIButton *)sender
 {
-    D2Log(@"goButtonPressed");
+//    D2Log(@"goButtonPressed");
     
-    int actualResultInt = [(MathUIDataObject *)[mathUiDataObjectArr objectAtIndex:curIndex] resultNumber];
+    int actualResultInt = [(MathTableDataObject *)[mathTableDataObjectArr objectAtIndex:curIndex] resultNumber];
     int userEnteredNumberInt = [userEnteredNumber intValue];
-    D2Log(@"actual result=%d", actualResultInt);
-    D2Log(@"entered result=%d", userEnteredNumberInt);
+//    D2Log(@"actual result=%d", actualResultInt);
+//    D2Log(@"entered result=%d", userEnteredNumberInt);
 
     if(actualResultInt != userEnteredNumberInt)
     {
@@ -120,7 +119,6 @@
     curIndex++;
     if(curIndex >= 10)
     {
-        // TODO alert and reset curIndex
         UIAlertView *alert = [[UIAlertView alloc]
                               initWithTitle:@"Done"
                               message:@"Great job!"
@@ -130,6 +128,7 @@
         [alert show];
         
         [self resetData];
+        return;
     }
     
     // use existing data object 
@@ -144,7 +143,7 @@
 {
     curIndex = 0;
     // get new data from utility method, and store in local object 
-    mathUiDataObjectArr = [MathUtility getMathUIObjectArray];
+    mathTableDataObjectArr = [MathUtility getMathUIObjectArray];
     [self bindData];
 }
 
@@ -155,13 +154,13 @@
 {
     NSString* tmpStr = nil;
     
-    MathUIDataObject* mathUiDataObject = (MathUIDataObject*)[mathUiDataObjectArr objectAtIndex:curIndex];
+    MathTableDataObject* mathTableDataObject = (MathTableDataObject*)[mathTableDataObjectArr objectAtIndex:curIndex];
     
-    tmpStr = [NSString stringWithFormat:@"%d", mathUiDataObject.firstNumber];
+    tmpStr = [NSString stringWithFormat:@"%d", mathTableDataObject.firstNumber];
     [mathUiControlObject.firstNumberLabel setText: tmpStr];
-    tmpStr = [NSString stringWithFormat:@"%d", mathUiDataObject.secondNumber];
+    tmpStr = [NSString stringWithFormat:@"%d", mathTableDataObject.secondNumber];
     [mathUiControlObject.secondNumberLabel setText: tmpStr];
-    tmpStr = [MathUtility getOperandSymbol:mathUiDataObject.operand];
+    tmpStr = [MathUtility getOperandSymbol:mathTableDataObject.operand];
     [mathUiControlObject.operandLabel setText: tmpStr];
 
     // hide the answer

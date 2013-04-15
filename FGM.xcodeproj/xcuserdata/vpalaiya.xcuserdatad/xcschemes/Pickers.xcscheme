@@ -16,8 +16,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "817C003913FBE5100082747C"
                BuildableName = "Pickers.app"
-               BlueprintName = "Pickers"
-               ReferencedContainer = "container:Pickers.xcodeproj">
+               BlueprintName = "FGM"
+               ReferencedContainer = "container:FGM.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -34,8 +34,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "817C003913FBE5100082747C"
             BuildableName = "Pickers.app"
-            BlueprintName = "Pickers"
-            ReferencedContainer = "container:Pickers.xcodeproj">
+            BlueprintName = "FGM"
+            ReferencedContainer = "container:FGM.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -53,8 +53,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "817C003913FBE5100082747C"
             BuildableName = "Pickers.app"
-            BlueprintName = "Pickers"
-            ReferencedContainer = "container:Pickers.xcodeproj">
+            BlueprintName = "FGM"
+            ReferencedContainer = "container:FGM.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -71,8 +71,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "817C003913FBE5100082747C"
             BuildableName = "Pickers.app"
-            BlueprintName = "Pickers"
-            ReferencedContainer = "container:Pickers.xcodeproj">
+            BlueprintName = "FGM"
+            ReferencedContainer = "container:FGM.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

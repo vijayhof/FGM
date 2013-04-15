@@ -1,5 +1,5 @@
 //
-//  BIDSingleComponentPickerViewController.h
+//  TakeTestComponentController.h
 //  Pickers
 //
 //  Created by Dave Mark on 8/17/11.
@@ -13,7 +13,7 @@
 @interface TakeTestComponentController : UIViewController
 
 // data object (array) that will be used in the flow and displayed in the UI
-@property (strong, nonatomic) NSMutableArray* mathUiDataObjectArr;
+@property (strong, nonatomic) NSMutableArray* mathTableDataObjectArr;
 
 // current index into the data object array. data object array contains the multiple questions asked
 @property (nonatomic) int curIndex;

@@ -5,7 +5,7 @@
 #import "MathUtility.h"
 #import "Utility.h"
 #import "Constants.h"
-#import "MathUIDataObject.h"
+#import "MathTableDataObject.h"
 
 @implementation MathUtility
 
@@ -84,7 +84,7 @@
     NSMutableArray* secondNumberArr = [MathUtility getSecondNumberArray];
     NSMutableArray* operandArr      = [MathUtility getOperandArray];
     
-    MathUIDataObject* mathUiDataObject = nil;
+    MathTableDataObject* mathTableDataObject = nil;
     int firstNumber = -1;
     int secondNumber = -1;
     int resultNumber = -1;
@@ -119,13 +119,13 @@
             resultNumber = firstNumber / secondNumber;
         }
         
-        mathUiDataObject = [[MathUIDataObject alloc] init];
-        mathUiDataObject.firstNumber  = firstNumber;
-        mathUiDataObject.secondNumber = secondNumber;
-        mathUiDataObject.operand      = [operandArr objectAtIndex:i];
-        mathUiDataObject.resultNumber = resultNumber;
+        mathTableDataObject = [[MathTableDataObject alloc] init];
+        mathTableDataObject.firstNumber  = firstNumber;
+        mathTableDataObject.secondNumber = secondNumber;
+        mathTableDataObject.operand      = [operandArr objectAtIndex:i];
+        mathTableDataObject.resultNumber = resultNumber;
         
-        [retArr addObject:mathUiDataObject];
+        [retArr addObject:mathTableDataObject];
     }
     
     // TODO memory cleanup

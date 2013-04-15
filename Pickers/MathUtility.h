@@ -4,7 +4,7 @@
 
 #import <Foundation/Foundation.h>
 
-@class MathUIDataObject;
+@class MathTableDataObject;
 
 @interface MathUtility : NSObject
 
