@@ -19,18 +19,17 @@
 		67C2370F16CB35C8003D0878 /* MathTableDataObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 67C2370E16CB35C8003D0878 /* MathTableDataObject.m */; };
 		67C2371216CD4B98003D0878 /* MathUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 67C2371116CD4B97003D0878 /* MathUtility.m */; };
 		67C2371416CD4E09003D0878 /* PersistentApplicationData.m in Sources */ = {isa = PBXBuildFile; fileRef = 67C236FF16C73609003D0878 /* PersistentApplicationData.m */; };
-		67F323AB171B72CC003B137E /* PersistentScoringUserData.h in Resources */ = {isa = PBXBuildFile; fileRef = 67F323AA171B72CC003B137E /* PersistentScoringUserData.h */; };
-		67F323AD171B72E1003B137E /* PersistentScoringUserData.m in Resources */ = {isa = PBXBuildFile; fileRef = 67F323AC171B72E1003B137E /* PersistentScoringUserData.m */; };
 		67F323BD171BB564003B137E /* pencil.png in Resources */ = {isa = PBXBuildFile; fileRef = 67F323BC171BB563003B137E /* pencil.png */; };
 		67F323C1171BB8E8003B137E /* learn.png in Resources */ = {isa = PBXBuildFile; fileRef = 67F323C0171BB8E8003B137E /* learn.png */; };
 		67F323C3171BBAFD003B137E /* clock.png in Resources */ = {isa = PBXBuildFile; fileRef = 67F323C2171BBAFD003B137E /* clock.png */; };
+		67F323C6171BBCD8003B137E /* learn.png in Resources */ = {isa = PBXBuildFile; fileRef = 67F323C4171BBCD8003B137E /* learn.png */; };
+		67F323C7171BBCD8003B137E /* pencil.png in Resources */ = {isa = PBXBuildFile; fileRef = 67F323C5171BBCD8003B137E /* pencil.png */; };
 		817C003F13FBE5100082747C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 817C003E13FBE5100082747C /* UIKit.framework */; };
 		817C004113FBE5100082747C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 817C004013FBE5100082747C /* Foundation.framework */; };
 		817C004713FBE5100082747C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 817C004513FBE5100082747C /* InfoPlist.strings */; };
 		817C004913FBE5100082747C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 817C004813FBE5100082747C /* main.m */; };
 		817C006013FBE8F60082747C /* BaseTableComponentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 817C005E13FBE8F60082747C /* BaseTableComponentController.m */; };
 		817C007D13FC5F250082747C /* TabBarController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 817C007C13FC5F250082747C /* TabBarController.xib */; };
-		81F55C9F13FEF26700299C77 /* statedictionary.plist in Resources */ = {isa = PBXBuildFile; fileRef = 81F55C9E13FEF26700299C77 /* statedictionary.plist */; };
 		81F55CB113FEFF1F00299C77 /* crunch.wav in Resources */ = {isa = PBXBuildFile; fileRef = 81F55CAF13FEFF1F00299C77 /* crunch.wav */; };
 		81F55CB213FEFF1F00299C77 /* win.wav in Resources */ = {isa = PBXBuildFile; fileRef = 81F55CB013FEFF1F00299C77 /* win.wav */; };
 		81F55CB413FF013F00299C77 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81F55CB313FF013F00299C77 /* AudioToolbox.framework */; };
@@ -55,11 +54,11 @@
 		67C2370E16CB35C8003D0878 /* MathTableDataObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MathTableDataObject.m; sourceTree = "<group>"; };
 		67C2371016CD4B97003D0878 /* MathUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MathUtility.h; sourceTree = "<group>"; };
 		67C2371116CD4B97003D0878 /* MathUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MathUtility.m; sourceTree = "<group>"; };
-		67F323AA171B72CC003B137E /* PersistentScoringUserData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersistentScoringUserData.h; sourceTree = "<group>"; };
-		67F323AC171B72E1003B137E /* PersistentScoringUserData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersistentScoringUserData.m; sourceTree = "<group>"; };
 		67F323BC171BB563003B137E /* pencil.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pencil.png; path = "../Custom Picker Images/pencil.png"; sourceTree = "<group>"; };
 		67F323C0171BB8E8003B137E /* learn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = learn.png; path = "../Custom Picker Images/learn.png"; sourceTree = "<group>"; };
 		67F323C2171BBAFD003B137E /* clock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clock.png; sourceTree = "<group>"; };
+		67F323C4171BBCD8003B137E /* learn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = learn.png; sourceTree = "<group>"; };
+		67F323C5171BBCD8003B137E /* pencil.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pencil.png; sourceTree = "<group>"; };
 		817C003A13FBE5100082747C /* FGM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FGM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		817C003E13FBE5100082747C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		817C004013FBE5100082747C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -71,7 +70,6 @@
 		817C005D13FBE8F60082747C /* BaseTableComponentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTableComponentController.h; sourceTree = "<group>"; };
 		817C005E13FBE8F60082747C /* BaseTableComponentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableComponentController.m; sourceTree = "<group>"; };
 		817C007C13FC5F250082747C /* TabBarController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TabBarController.xib; sourceTree = "<group>"; };
-		81F55C9E13FEF26700299C77 /* statedictionary.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = statedictionary.plist; sourceTree = "<group>"; };
 		81F55CAF13FEFF1F00299C77 /* crunch.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = crunch.wav; sourceTree = "<group>"; };
 		81F55CB013FEFF1F00299C77 /* win.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = win.wav; sourceTree = "<group>"; };
 		81F55CB313FF013F00299C77 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -125,8 +123,6 @@
 				6719E40816D9530700C1D2C6 /* MathUIControlObject.m */,
 				67C236FE16C73609003D0878 /* PersistentApplicationData.h */,
 				67C236FF16C73609003D0878 /* PersistentApplicationData.m */,
-				67F323AA171B72CC003B137E /* PersistentScoringUserData.h */,
-				67F323AC171B72E1003B137E /* PersistentScoringUserData.m */,
 			);
 			name = common;
 			sourceTree = "<group>";
@@ -179,7 +175,6 @@
 				6719E40B16D9A29000C1D2C6 /* Current */,
 				81F55CAE13FEFF1F00299C77 /* Custom FGM Sounds */,
 				81F55CA113FEF8F400299C77 /* Custom FGM Images */,
-				81F55C9E13FEF26700299C77 /* statedictionary.plist */,
 				817C007113FC5CF00082747C /* Tab Bar Icons */,
 				817C004313FBE5100082747C /* Supporting Files */,
 			);
@@ -204,6 +199,8 @@
 				67F323C0171BB8E8003B137E /* learn.png */,
 				67F323BC171BB563003B137E /* pencil.png */,
 				67F323C2171BBAFD003B137E /* clock.png */,
+				67F323C4171BBCD8003B137E /* learn.png */,
+				67F323C5171BBCD8003B137E /* pencil.png */,
 			);
 			path = "Tab Bar Icons";
 			sourceTree = "<group>";
@@ -279,18 +276,17 @@
 			files = (
 				817C004713FBE5100082747C /* InfoPlist.strings in Resources */,
 				817C007D13FC5F250082747C /* TabBarController.xib in Resources */,
-				81F55C9F13FEF26700299C77 /* statedictionary.plist in Resources */,
 				81F55CB113FEFF1F00299C77 /* crunch.wav in Resources */,
 				81F55CB213FEFF1F00299C77 /* win.wav in Resources */,
 				6719E42616DADF2A00C1D2C6 /* BaseTableComponentController.xib in Resources */,
 				6705D2351711E9AA0097E0A8 /* TapButtonTableComponentController.h in Resources */,
 				6746B2C11719D30E0029E835 /* TakeTestComponentController.xib in Resources */,
 				6746B2C3171A04A40029E835 /* TakeTestComponentController.h in Resources */,
-				67F323AB171B72CC003B137E /* PersistentScoringUserData.h in Resources */,
-				67F323AD171B72E1003B137E /* PersistentScoringUserData.m in Resources */,
 				67F323BD171BB564003B137E /* pencil.png in Resources */,
 				67F323C1171BB8E8003B137E /* learn.png in Resources */,
 				67F323C3171BBAFD003B137E /* clock.png in Resources */,
+				67F323C6171BBCD8003B137E /* learn.png in Resources */,
+				67F323C7171BBCD8003B137E /* pencil.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
