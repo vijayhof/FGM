@@ -19,8 +19,6 @@
 		67C2370F16CB35C8003D0878 /* MathTableDataObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 67C2370E16CB35C8003D0878 /* MathTableDataObject.m */; };
 		67C2371216CD4B98003D0878 /* MathUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 67C2371116CD4B97003D0878 /* MathUtility.m */; };
 		67C2371416CD4E09003D0878 /* PersistentApplicationData.m in Sources */ = {isa = PBXBuildFile; fileRef = 67C236FF16C73609003D0878 /* PersistentApplicationData.m */; };
-		67F323BD171BB564003B137E /* pencil.png in Resources */ = {isa = PBXBuildFile; fileRef = 67F323BC171BB563003B137E /* pencil.png */; };
-		67F323C1171BB8E8003B137E /* learn.png in Resources */ = {isa = PBXBuildFile; fileRef = 67F323C0171BB8E8003B137E /* learn.png */; };
 		67F323C3171BBAFD003B137E /* clock.png in Resources */ = {isa = PBXBuildFile; fileRef = 67F323C2171BBAFD003B137E /* clock.png */; };
 		67F323C6171BBCD8003B137E /* learn.png in Resources */ = {isa = PBXBuildFile; fileRef = 67F323C4171BBCD8003B137E /* learn.png */; };
 		67F323C7171BBCD8003B137E /* pencil.png in Resources */ = {isa = PBXBuildFile; fileRef = 67F323C5171BBCD8003B137E /* pencil.png */; };
@@ -54,8 +52,6 @@
 		67C2370E16CB35C8003D0878 /* MathTableDataObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MathTableDataObject.m; sourceTree = "<group>"; };
 		67C2371016CD4B97003D0878 /* MathUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MathUtility.h; sourceTree = "<group>"; };
 		67C2371116CD4B97003D0878 /* MathUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MathUtility.m; sourceTree = "<group>"; };
-		67F323BC171BB563003B137E /* pencil.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pencil.png; path = "../Custom Picker Images/pencil.png"; sourceTree = "<group>"; };
-		67F323C0171BB8E8003B137E /* learn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = learn.png; path = "../Custom Picker Images/learn.png"; sourceTree = "<group>"; };
 		67F323C2171BBAFD003B137E /* clock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clock.png; sourceTree = "<group>"; };
 		67F323C4171BBCD8003B137E /* learn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = learn.png; sourceTree = "<group>"; };
 		67F323C5171BBCD8003B137E /* pencil.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pencil.png; sourceTree = "<group>"; };
@@ -196,8 +192,6 @@
 		817C007113FC5CF00082747C /* Tab Bar Icons */ = {
 			isa = PBXGroup;
 			children = (
-				67F323C0171BB8E8003B137E /* learn.png */,
-				67F323BC171BB563003B137E /* pencil.png */,
 				67F323C2171BBAFD003B137E /* clock.png */,
 				67F323C4171BBCD8003B137E /* learn.png */,
 				67F323C5171BBCD8003B137E /* pencil.png */,
@@ -282,8 +276,6 @@
 				6705D2351711E9AA0097E0A8 /* TapButtonTableComponentController.h in Resources */,
 				6746B2C11719D30E0029E835 /* TakeTestComponentController.xib in Resources */,
 				6746B2C3171A04A40029E835 /* TakeTestComponentController.h in Resources */,
-				67F323BD171BB564003B137E /* pencil.png in Resources */,
-				67F323C1171BB8E8003B137E /* learn.png in Resources */,
 				67F323C3171BBAFD003B137E /* clock.png in Resources */,
 				67F323C6171BBCD8003B137E /* learn.png in Resources */,
 				67F323C7171BBCD8003B137E /* pencil.png in Resources */,
