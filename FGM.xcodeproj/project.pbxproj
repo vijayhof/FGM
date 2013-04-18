@@ -14,6 +14,10 @@
 		6746B2C11719D30E0029E835 /* TakeTestComponentController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6746B2C01719D30E0029E835 /* TakeTestComponentController.xib */; };
 		6746B2C3171A04A40029E835 /* TakeTestComponentController.h in Resources */ = {isa = PBXBuildFile; fileRef = 6746B2C2171A04A40029E835 /* TakeTestComponentController.h */; };
 		6746B2C5171A05860029E835 /* TakeTestComponentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6746B2C4171A05860029E835 /* TakeTestComponentController.m */; };
+		674CA07F171F1072002652C2 /* AboutPageController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 674CA07E171F1072002652C2 /* AboutPageController.xib */; };
+		674CA085171F3C76002652C2 /* MoreTabComponentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 674CA084171F3C75002652C2 /* MoreTabComponentController.m */; };
+		674CA088171F438C002652C2 /* AboutPageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 674CA087171F438C002652C2 /* AboutPageController.m */; };
+		674CA08E171F9DFB002652C2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 674CA08D171F9DFB002652C2 /* CoreGraphics.framework */; };
 		67C2370416C9F0D9003D0878 /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 67C2370316C7366B003D0878 /* Utility.m */; };
 		67C2370816CAF125003D0878 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 67C2370716CAF125003D0878 /* AppDelegate.m */; };
 		67C2370F16CB35C8003D0878 /* MathTableDataObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 67C2370E16CB35C8003D0878 /* MathTableDataObject.m */; };
@@ -42,6 +46,12 @@
 		6746B2C01719D30E0029E835 /* TakeTestComponentController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TakeTestComponentController.xib; sourceTree = "<group>"; };
 		6746B2C2171A04A40029E835 /* TakeTestComponentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TakeTestComponentController.h; sourceTree = "<group>"; };
 		6746B2C4171A05860029E835 /* TakeTestComponentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TakeTestComponentController.m; sourceTree = "<group>"; };
+		674CA07E171F1072002652C2 /* AboutPageController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutPageController.xib; sourceTree = "<group>"; };
+		674CA083171F3C75002652C2 /* MoreTabComponentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreTabComponentController.h; sourceTree = "<group>"; };
+		674CA084171F3C75002652C2 /* MoreTabComponentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreTabComponentController.m; sourceTree = "<group>"; };
+		674CA086171F438C002652C2 /* AboutPageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutPageController.h; sourceTree = "<group>"; };
+		674CA087171F438C002652C2 /* AboutPageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutPageController.m; sourceTree = "<group>"; };
+		674CA08D171F9DFB002652C2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		67C236FA16C73454003D0878 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		67C236FE16C73609003D0878 /* PersistentApplicationData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PersistentApplicationData.h; sourceTree = "<group>"; };
 		67C236FF16C73609003D0878 /* PersistentApplicationData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PersistentApplicationData.m; sourceTree = "<group>"; };
@@ -79,6 +89,7 @@
 				81F55CB413FF013F00299C77 /* AudioToolbox.framework in Frameworks */,
 				817C003F13FBE5100082747C /* UIKit.framework in Frameworks */,
 				817C004113FBE5100082747C /* Foundation.framework in Frameworks */,
+				674CA08E171F9DFB002652C2 /* CoreGraphics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,6 +112,7 @@
 				817C007C13FC5F250082747C /* TabBarController.xib */,
 				6719E42516DADF2A00C1D2C6 /* BaseTableComponentController.xib */,
 				6746B2C01719D30E0029E835 /* TakeTestComponentController.xib */,
+				674CA07E171F1072002652C2 /* AboutPageController.xib */,
 			);
 			name = xib;
 			sourceTree = "<group>";
@@ -132,6 +144,10 @@
 				6705D2361711EA030097E0A8 /* TapButtonTableComponentController.m */,
 				6746B2C2171A04A40029E835 /* TakeTestComponentController.h */,
 				6746B2C4171A05860029E835 /* TakeTestComponentController.m */,
+				674CA083171F3C75002652C2 /* MoreTabComponentController.h */,
+				674CA084171F3C75002652C2 /* MoreTabComponentController.m */,
+				674CA086171F438C002652C2 /* AboutPageController.h */,
+				674CA087171F438C002652C2 /* AboutPageController.m */,
 				817C004B13FBE5100082747C /* AppDelegate.h */,
 				67C2370716CAF125003D0878 /* AppDelegate.m */,
 			);
@@ -159,6 +175,7 @@
 		817C003D13FBE5100082747C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				674CA08D171F9DFB002652C2 /* CoreGraphics.framework */,
 				817C003E13FBE5100082747C /* UIKit.framework */,
 				817C004013FBE5100082747C /* Foundation.framework */,
 			);
@@ -243,7 +260,7 @@
 		817C003113FBE5100082747C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0420;
+				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = "Dave Mark";
 			};
 			buildConfigurationList = 817C003413FBE5100082747C /* Build configuration list for PBXProject "FGM" */;
@@ -279,6 +296,7 @@
 				67F323C3171BBAFD003B137E /* clock.png in Resources */,
 				67F323C6171BBCD8003B137E /* learn.png in Resources */,
 				67F323C7171BBCD8003B137E /* pencil.png in Resources */,
+				674CA07F171F1072002652C2 /* AboutPageController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,6 +317,8 @@
 				6719E40916D9530700C1D2C6 /* MathUIControlObject.m in Sources */,
 				6705D2371711EA040097E0A8 /* TapButtonTableComponentController.m in Sources */,
 				6746B2C5171A05860029E835 /* TakeTestComponentController.m in Sources */,
+				674CA085171F3C76002652C2 /* MoreTabComponentController.m in Sources */,
+				674CA088171F438C002652C2 /* AboutPageController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,7 +342,12 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Vijayant Palaiya (5C2W3HQC8V)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Vijayant Palaiya (5C2W3HQC8V)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -335,8 +360,11 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -347,15 +375,23 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Vijayant Palaiya";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Vijayant Palaiya";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
