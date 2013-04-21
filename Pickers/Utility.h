@@ -35,5 +35,5 @@
 + (void) setCurrentOperation: (NSString *) pCurrentOperation;
 + (void) setShuffleNumbers: (BOOL) pShuffleNumbers;
 + (void) setShuffleOperations: (BOOL) pShuffleOperations;
-
++ (void)launchMailAppOnDevice:(NSString*)toRecipients cc:(NSString*) ccRecipients bcc:(NSString*) bccRecipients subject:(NSString*)subjectStr body:(NSString*) bodyStr;
 @end

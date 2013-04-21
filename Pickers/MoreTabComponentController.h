@@ -10,6 +10,6 @@
 
 @interface MoreTabComponentController : UITableViewController
 
-@property (strong, nonatomic) NSMutableArray *controllers;
+@property (strong, nonatomic) NSMutableArray *listEntries;
 
 @end

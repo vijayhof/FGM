@@ -142,5 +142,22 @@
 	return documentsDirectory;
 }
 
+//
+// Launches the Mail application on the device.
+//
++(void)launchMailAppOnDevice:(NSString*)toRecipients cc:(NSString*) ccRecipients bcc:(NSString*) bccRecipients subject:(NSString*)subjectStr body:(NSString*) bodyStr
+{
+    NSString *email = [[NSString alloc] initWithFormat:@"mailto:%@?cc=%@&bcc=%@&subject=%@&body=%@",toRecipients, ccRecipients,bccRecipients,subjectStr,bodyStr];
+    
+    
+//    @"mailto:first@example.com?cc=second@example.com,third@example.com&subject=Hello from California!";
+//    NSString *body = @"&body=It is raining in sunny California!";
+//    NSString *email = [NSString stringWithFormat:@"%@%@", recipients, body];
+//    NSString *email = [NSString stringWithFormat:@"%@%@", recipients, body];
+
+    email = [email stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:email]];
+}
 
 @end

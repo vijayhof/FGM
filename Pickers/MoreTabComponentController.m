@@ -8,16 +8,17 @@
 #import "Constants.h"
 #import "MoreTabComponentController.h"
 #import "AboutPageController.h"
+#import "Utility.h"
 
 @implementation MoreTabComponentController
 
-@synthesize controllers;
+@synthesize listEntries;
 
 #pragma mark -
 - (void) loadView
 {
     [super loadView];
-
+    
     UITableView* tv = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
     tv.dataSource = self;
     tv.delegate = self;
@@ -30,24 +31,32 @@
     [super viewDidLoad];
     
     self.title = @"More";
-    NSMutableArray *array = [[NSMutableArray alloc] init];
-    
+    NSMutableArray *dictArray = [[NSMutableArray alloc] init];
+    NSMutableDictionary* tmpDict = NULL;
     // About Page
     AboutPageController* aboutPageController = [[AboutPageController alloc]
-                       initWithNibName:@"AboutPageController" bundle:nil];
+                                                initWithNibName:@"AboutPageController" bundle:nil];
     aboutPageController.message = @"Version 2.1";
     aboutPageController.title = @"About";
-    [array addObject:aboutPageController];
+    tmpDict = [[NSMutableDictionary alloc] init];
+    [tmpDict setObject:aboutPageController forKey:@"About"];
+    [dictArray addObject:tmpDict];
+    tmpDict = NULL;
     
-    self.controllers = array;
-
+    // Give Feedback
+    tmpDict = [[NSMutableDictionary alloc] init];
+    [tmpDict setObject:[[NSNull alloc] init] forKey:@"Feedback"];
+    [dictArray addObject:tmpDict];
+    tmpDict = NULL;
+    
+    self.listEntries = dictArray;
 }
 
 #pragma mark -
 #pragma mark Table Data Source Methods
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [self.controllers count];
+    return [self.listEntries count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView
@@ -66,8 +75,8 @@
     
     // Configure the cell
     NSUInteger row = [indexPath row];
-    UIViewController *controller = [controllers objectAtIndex:row];
-    cell.textLabel.text = controller.title;
+    NSMutableDictionary* dictEntry = [self.listEntries objectAtIndex:row];
+    cell.textLabel.text = [[dictEntry allKeys] objectAtIndex:0];
     return cell;
 }
 
@@ -75,16 +84,22 @@
 #pragma mark Table Delegate Methods
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    D2Log(@"didSelectRowAtIndexPath");
     NSUInteger row = [indexPath row];
-    UIViewController *nextController = [self.controllers
-                                                    objectAtIndex:row];
-    D2Log(@"didSelectRowAtIndexPath tile %@", nextController.title);
-    [self.navigationController pushViewController:nextController
-                                         animated:YES];
-
-    D2Log(@"didSelectRowAtIndexPath done");
-
+    NSMutableDictionary* dictEntry = [self.listEntries objectAtIndex:row];
+    id tmpObj = [[dictEntry allValues] objectAtIndex:0];
+    NSString* tmpStr = [[dictEntry allKeys] objectAtIndex:0];
+    if([tmpObj isKindOfClass:[UIViewController class]])
+    {
+        [self.navigationController pushViewController:tmpObj
+                                             animated:YES];
+        
+    }
+    else if([tmpStr isEqualToString:@"Feedback"])
+    {
+        D2Log(@"give feedback");
+        [Utility launchMailAppOnDevice:@"heavenonfremont@gmail.com" cc:@"" bcc:@"" subject:@"hey" body:@"hey body"];
+        D2Log(@"give feedback end");
+    }
 }
 
 @end
