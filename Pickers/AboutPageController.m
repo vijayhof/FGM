@@ -19,7 +19,7 @@
     [super viewDidLoad];
     
     [label setNumberOfLines:0];
-    [label sizeToFit];
+//    [label sizeToFit];
 }
 
 - (void)viewWillAppear:(BOOL)animated

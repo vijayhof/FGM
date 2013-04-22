@@ -120,10 +120,10 @@
     if(curIndex >= 10)
     {
         UIAlertView *alert = [[UIAlertView alloc]
-                              initWithTitle:@"Done"
+                              initWithTitle:@""
                               message:@"Great job!"
                               delegate:nil
-                              cancelButtonTitle:@"Phew!"
+                              cancelButtonTitle:@"Done"
                               otherButtonTitles:nil];
         [alert show];
         

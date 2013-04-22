@@ -12,7 +12,6 @@
 
 - (BOOL)showTapButton
 {
-    D2Log(@"TapButtonTableComponentController showTapButton");
     return YES;
 }
 

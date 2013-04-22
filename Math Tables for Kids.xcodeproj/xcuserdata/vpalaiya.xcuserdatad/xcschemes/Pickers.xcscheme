@@ -16,8 +16,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "817C003913FBE5100082747C"
                BuildableName = "FGM.app"
-               BlueprintName = "FGM"
-               ReferencedContainer = "container:FGM.xcodeproj">
+               BlueprintName = "Math Tables for Kids"
+               ReferencedContainer = "container:Math Tables for Kids.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -34,8 +34,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "817C003913FBE5100082747C"
             BuildableName = "FGM.app"
-            BlueprintName = "FGM"
-            ReferencedContainer = "container:FGM.xcodeproj">
+            BlueprintName = "Math Tables for Kids"
+            ReferencedContainer = "container:Math Tables for Kids.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -53,8 +53,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "817C003913FBE5100082747C"
             BuildableName = "FGM.app"
-            BlueprintName = "FGM"
-            ReferencedContainer = "container:FGM.xcodeproj">
+            BlueprintName = "Math Tables for Kids"
+            ReferencedContainer = "container:Math Tables for Kids.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -71,8 +71,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "817C003913FBE5100082747C"
             BuildableName = "FGM.app"
-            BlueprintName = "FGM"
-            ReferencedContainer = "container:FGM.xcodeproj">
+            BlueprintName = "Math Tables for Kids"
+            ReferencedContainer = "container:Math Tables for Kids.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

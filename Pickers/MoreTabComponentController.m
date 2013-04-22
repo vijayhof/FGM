@@ -97,7 +97,7 @@
     else if([tmpStr isEqualToString:@"Feedback"])
     {
         D2Log(@"give feedback");
-        [Utility launchMailAppOnDevice:@"heavenonfremont@gmail.com" cc:@"" bcc:@"" subject:@"hey" body:@"hey body"];
+        [Utility launchMailAppOnDevice:@"support@hcsninc.com" cc:@"" bcc:@"" subject:@"Giving Feedback on" body:@""];
         D2Log(@"give feedback end");
     }
 }

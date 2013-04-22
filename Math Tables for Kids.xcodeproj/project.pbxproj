@@ -18,11 +18,24 @@
 		674CA085171F3C76002652C2 /* MoreTabComponentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 674CA084171F3C75002652C2 /* MoreTabComponentController.m */; };
 		674CA088171F438C002652C2 /* AboutPageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 674CA087171F438C002652C2 /* AboutPageController.m */; };
 		674CA08E171F9DFB002652C2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 674CA08D171F9DFB002652C2 /* CoreGraphics.framework */; };
+		67790C671724AD29009616EE /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 67790C641724AD29009616EE /* Default.png */; };
+		67790C681724AD29009616EE /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 67790C651724AD29009616EE /* Default@2x.png */; };
+		67790C691724AD29009616EE /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 67790C661724AD29009616EE /* Default-568h@2x.png */; };
 		67C2370416C9F0D9003D0878 /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 67C2370316C7366B003D0878 /* Utility.m */; };
 		67C2370816CAF125003D0878 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 67C2370716CAF125003D0878 /* AppDelegate.m */; };
 		67C2370F16CB35C8003D0878 /* MathTableDataObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 67C2370E16CB35C8003D0878 /* MathTableDataObject.m */; };
 		67C2371216CD4B98003D0878 /* MathUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 67C2371116CD4B97003D0878 /* MathUtility.m */; };
 		67C2371416CD4E09003D0878 /* PersistentApplicationData.m in Sources */ = {isa = PBXBuildFile; fileRef = 67C236FF16C73609003D0878 /* PersistentApplicationData.m */; };
+		67C26A691724945C00DF6F56 /* Icon-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = 67C26A5F1724945C00DF6F56 /* Icon-Small.png */; };
+		67C26A6A1724945C00DF6F56 /* Icon-Small-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 67C26A601724945C00DF6F56 /* Icon-Small-50.png */; };
+		67C26A6B1724945C00DF6F56 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 67C26A611724945C00DF6F56 /* Icon.png */; };
+		67C26A6C1724945C00DF6F56 /* Icon-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 67C26A621724945C00DF6F56 /* Icon-Small@2x.png */; };
+		67C26A6D1724945C00DF6F56 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 67C26A631724945C00DF6F56 /* Icon-72.png */; };
+		67C26A6E1724945C00DF6F56 /* Icon-Small-50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 67C26A641724945C00DF6F56 /* Icon-Small-50@2x.png */; };
+		67C26A6F1724945C00DF6F56 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 67C26A651724945C00DF6F56 /* Icon@2x.png */; };
+		67C26A701724945C00DF6F56 /* Icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 67C26A661724945C00DF6F56 /* Icon-72@2x.png */; };
+		67C26A711724945C00DF6F56 /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = 67C26A671724945C00DF6F56 /* iTunesArtwork.png */; };
+		67C26A721724945C00DF6F56 /* iTunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 67C26A681724945C00DF6F56 /* iTunesArtwork@2x.png */; };
 		67F323C3171BBAFD003B137E /* clock.png in Resources */ = {isa = PBXBuildFile; fileRef = 67F323C2171BBAFD003B137E /* clock.png */; };
 		67F323C6171BBCD8003B137E /* learn.png in Resources */ = {isa = PBXBuildFile; fileRef = 67F323C4171BBCD8003B137E /* learn.png */; };
 		67F323C7171BBCD8003B137E /* pencil.png in Resources */ = {isa = PBXBuildFile; fileRef = 67F323C5171BBCD8003B137E /* pencil.png */; };
@@ -52,6 +65,9 @@
 		674CA086171F438C002652C2 /* AboutPageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutPageController.h; sourceTree = "<group>"; };
 		674CA087171F438C002652C2 /* AboutPageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutPageController.m; sourceTree = "<group>"; };
 		674CA08D171F9DFB002652C2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		67790C641724AD29009616EE /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		67790C651724AD29009616EE /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		67790C661724AD29009616EE /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		67C236FA16C73454003D0878 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		67C236FE16C73609003D0878 /* PersistentApplicationData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PersistentApplicationData.h; sourceTree = "<group>"; };
 		67C236FF16C73609003D0878 /* PersistentApplicationData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PersistentApplicationData.m; sourceTree = "<group>"; };
@@ -62,16 +78,26 @@
 		67C2370E16CB35C8003D0878 /* MathTableDataObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MathTableDataObject.m; sourceTree = "<group>"; };
 		67C2371016CD4B97003D0878 /* MathUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MathUtility.h; sourceTree = "<group>"; };
 		67C2371116CD4B97003D0878 /* MathUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MathUtility.m; sourceTree = "<group>"; };
+		67C26A5F1724945C00DF6F56 /* Icon-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small.png"; sourceTree = "<group>"; };
+		67C26A601724945C00DF6F56 /* Icon-Small-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-50.png"; sourceTree = "<group>"; };
+		67C26A611724945C00DF6F56 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		67C26A621724945C00DF6F56 /* Icon-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small@2x.png"; sourceTree = "<group>"; };
+		67C26A631724945C00DF6F56 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
+		67C26A641724945C00DF6F56 /* Icon-Small-50@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-50@2x.png"; sourceTree = "<group>"; };
+		67C26A651724945C00DF6F56 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		67C26A661724945C00DF6F56 /* Icon-72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72@2x.png"; sourceTree = "<group>"; };
+		67C26A671724945C00DF6F56 /* iTunesArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iTunesArtwork.png; sourceTree = "<group>"; };
+		67C26A681724945C00DF6F56 /* iTunesArtwork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork@2x.png"; sourceTree = "<group>"; };
 		67F323C2171BBAFD003B137E /* clock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clock.png; sourceTree = "<group>"; };
 		67F323C4171BBCD8003B137E /* learn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = learn.png; sourceTree = "<group>"; };
 		67F323C5171BBCD8003B137E /* pencil.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pencil.png; sourceTree = "<group>"; };
-		817C003A13FBE5100082747C /* FGM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FGM.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		817C003A13FBE5100082747C /* Math Tables for Kids.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Math Tables for Kids.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		817C003E13FBE5100082747C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		817C004013FBE5100082747C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		817C004413FBE5100082747C /* FGM-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FGM-Info.plist"; sourceTree = "<group>"; };
+		817C004413FBE5100082747C /* Math Tables for Kids-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Math Tables for Kids-Info.plist"; sourceTree = "<group>"; };
 		817C004613FBE5100082747C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		817C004813FBE5100082747C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		817C004A13FBE5100082747C /* FGM-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FGM-Prefix.pch"; sourceTree = "<group>"; };
+		817C004A13FBE5100082747C /* Math Tables for Kids-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Math Tables for Kids-Prefix.pch"; sourceTree = "<group>"; };
 		817C004B13FBE5100082747C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		817C005D13FBE8F60082747C /* BaseTableComponentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTableComponentController.h; sourceTree = "<group>"; };
 		817C005E13FBE8F60082747C /* BaseTableComponentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableComponentController.m; sourceTree = "<group>"; };
@@ -166,7 +192,7 @@
 		817C003B13FBE5100082747C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				817C003A13FBE5100082747C /* FGM.app */,
+				817C003A13FBE5100082747C /* Math Tables for Kids.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -198,10 +224,10 @@
 		817C004313FBE5100082747C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				817C004413FBE5100082747C /* FGM-Info.plist */,
+				817C004413FBE5100082747C /* Math Tables for Kids-Info.plist */,
 				817C004513FBE5100082747C /* InfoPlist.strings */,
 				817C004813FBE5100082747C /* main.m */,
-				817C004A13FBE5100082747C /* FGM-Prefix.pch */,
+				817C004A13FBE5100082747C /* Math Tables for Kids-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -219,6 +245,19 @@
 		81F55CA113FEF8F400299C77 /* Custom FGM Images */ = {
 			isa = PBXGroup;
 			children = (
+				67C26A5F1724945C00DF6F56 /* Icon-Small.png */,
+				67790C641724AD29009616EE /* Default.png */,
+				67790C651724AD29009616EE /* Default@2x.png */,
+				67790C661724AD29009616EE /* Default-568h@2x.png */,
+				67C26A601724945C00DF6F56 /* Icon-Small-50.png */,
+				67C26A611724945C00DF6F56 /* Icon.png */,
+				67C26A621724945C00DF6F56 /* Icon-Small@2x.png */,
+				67C26A631724945C00DF6F56 /* Icon-72.png */,
+				67C26A641724945C00DF6F56 /* Icon-Small-50@2x.png */,
+				67C26A651724945C00DF6F56 /* Icon@2x.png */,
+				67C26A661724945C00DF6F56 /* Icon-72@2x.png */,
+				67C26A671724945C00DF6F56 /* iTunesArtwork.png */,
+				67C26A681724945C00DF6F56 /* iTunesArtwork@2x.png */,
 			);
 			name = "Custom FGM Images";
 			path = "Custom Picker Images";
@@ -237,9 +276,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		817C003913FBE5100082747C /* FGM */ = {
+		817C003913FBE5100082747C /* Math Tables for Kids */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 817C005013FBE5100082747C /* Build configuration list for PBXNativeTarget "FGM" */;
+			buildConfigurationList = 817C005013FBE5100082747C /* Build configuration list for PBXNativeTarget "Math Tables for Kids" */;
 			buildPhases = (
 				817C003613FBE5100082747C /* Sources */,
 				817C003713FBE5100082747C /* Frameworks */,
@@ -249,9 +288,9 @@
 			);
 			dependencies = (
 			);
-			name = FGM;
+			name = "Math Tables for Kids";
 			productName = Pickers;
-			productReference = 817C003A13FBE5100082747C /* FGM.app */;
+			productReference = 817C003A13FBE5100082747C /* Math Tables for Kids.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -263,7 +302,7 @@
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = "Dave Mark";
 			};
-			buildConfigurationList = 817C003413FBE5100082747C /* Build configuration list for PBXProject "FGM" */;
+			buildConfigurationList = 817C003413FBE5100082747C /* Build configuration list for PBXProject "Math Tables for Kids" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -275,7 +314,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				817C003913FBE5100082747C /* FGM */,
+				817C003913FBE5100082747C /* Math Tables for Kids */,
 			);
 		};
 /* End PBXProject section */
@@ -297,6 +336,19 @@
 				67F323C6171BBCD8003B137E /* learn.png in Resources */,
 				67F323C7171BBCD8003B137E /* pencil.png in Resources */,
 				674CA07F171F1072002652C2 /* AboutPageController.xib in Resources */,
+				67C26A691724945C00DF6F56 /* Icon-Small.png in Resources */,
+				67C26A6A1724945C00DF6F56 /* Icon-Small-50.png in Resources */,
+				67C26A6B1724945C00DF6F56 /* Icon.png in Resources */,
+				67C26A6C1724945C00DF6F56 /* Icon-Small@2x.png in Resources */,
+				67C26A6D1724945C00DF6F56 /* Icon-72.png in Resources */,
+				67C26A6E1724945C00DF6F56 /* Icon-Small-50@2x.png in Resources */,
+				67C26A6F1724945C00DF6F56 /* Icon@2x.png in Resources */,
+				67C26A701724945C00DF6F56 /* Icon-72@2x.png in Resources */,
+				67C26A711724945C00DF6F56 /* iTunesArtwork.png in Resources */,
+				67C26A721724945C00DF6F56 /* iTunesArtwork@2x.png in Resources */,
+				67790C671724AD29009616EE /* Default.png in Resources */,
+				67790C681724AD29009616EE /* Default@2x.png in Resources */,
+				67790C691724AD29009616EE /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -362,7 +414,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
@@ -388,7 +440,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
@@ -401,9 +453,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Pickers/FGM-Prefix.pch";
-				INFOPLIST_FILE = "Pickers/FGM-Info.plist";
-				PRODUCT_NAME = FGM;
+				GCC_PREFIX_HEADER = "Pickers/Math Tables for Kids-Prefix.pch";
+				INFOPLIST_FILE = "Pickers/Math Tables for Kids-Info.plist";
+				PRODUCT_NAME = "Math Tables for Kids";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -412,9 +465,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Pickers/FGM-Prefix.pch";
-				INFOPLIST_FILE = "Pickers/FGM-Info.plist";
-				PRODUCT_NAME = FGM;
+				GCC_PREFIX_HEADER = "Pickers/Math Tables for Kids-Prefix.pch";
+				INFOPLIST_FILE = "Pickers/Math Tables for Kids-Info.plist";
+				PRODUCT_NAME = "Math Tables for Kids";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -422,7 +476,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		817C003413FBE5100082747C /* Build configuration list for PBXProject "FGM" */ = {
+		817C003413FBE5100082747C /* Build configuration list for PBXProject "Math Tables for Kids" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				817C004E13FBE5100082747C /* Debug */,
@@ -431,7 +485,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		817C005013FBE5100082747C /* Build configuration list for PBXNativeTarget "FGM" */ = {
+		817C005013FBE5100082747C /* Build configuration list for PBXNativeTarget "Math Tables for Kids" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				817C005113FBE5100082747C /* Debug */,
