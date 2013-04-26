@@ -15,6 +15,9 @@
 @implementation TakeTestComponentController
 
 @synthesize mathTableDataObjectArr;
+@synthesize scores;
+@synthesize totalCorrectAnswers;
+
 @synthesize curIndex;
 @synthesize userEnteredNumber;
 
@@ -77,7 +80,6 @@
 //
 - (IBAction)numberButtonPressed:(UIButton *)sender
 {
-//    D2Log(@"numberButtonPressed %d", sender.tag);
     [userEnteredNumber appendFormat:@"%d",sender.tag];
     [mathUiControlObject.resultNumberLabel setText:userEnteredNumber];
     mathUiControlObject.resultNumberLabel.textColor = [UIColor blackColor];
@@ -88,7 +90,6 @@
 //
 - (IBAction)clrButtonPressed:(UIButton *)sender
 {
-//    D2Log(@"clrButtonPressed");
     [userEnteredNumber setString:@""];
     [mathUiControlObject.resultNumberLabel setText:@""];
 }
@@ -97,9 +98,7 @@
 // handle go button
 //
 - (IBAction)goButtonPressed:(UIButton *)sender
-{
-//    D2Log(@"goButtonPressed");
-    
+{    
     int actualResultInt = [(MathTableDataObject *)[mathTableDataObjectArr objectAtIndex:curIndex] resultNumber];
     int userEnteredNumberInt = [userEnteredNumber intValue];
 //    D2Log(@"actual result=%d", actualResultInt);
@@ -107,11 +106,21 @@
 
     if(actualResultInt != userEnteredNumberInt)
     {
+        // update score as wrong answer
+        [scores replaceObjectAtIndex:curIndex withObject:kQnAWrongAnswer];
+        
         mathUiControlObject.resultNumberLabel.textColor = [UIColor redColor];
         [userEnteredNumber setString:@""];
         return;
     }
 
+    if([[scores objectAtIndex:curIndex] isEqualToString:kQnANotAttempted])
+    {
+        // update score as correct answer
+        [scores replaceObjectAtIndex:curIndex withObject:kQnACorrectAnswer];
+        totalCorrectAnswers++;
+    }
+    
     mathUiControlObject.resultNumberLabel.textColor = [UIColor blackColor];
 
     [userEnteredNumber setString:@""];
@@ -119,9 +128,28 @@
     curIndex++;
     if(curIndex >= 10)
     {
+        NSString* tmpKudosString;
+        
+        if(totalCorrectAnswers >= 9)
+        {
+            tmpKudosString = @"Great job";
+        }
+        else if (totalCorrectAnswers >= 7)
+        {
+            tmpKudosString = @"Good job";
+        }
+        else if (totalCorrectAnswers >= 5)
+        {
+            tmpKudosString = @"Good try";
+        }
+        else
+        {
+            tmpKudosString = @"Keep working";
+        }
+
         UIAlertView *alert = [[UIAlertView alloc]
-                              initWithTitle:@""
-                              message:@"Great job!"
+                              initWithTitle:tmpKudosString
+                              message:[[NSString alloc]initWithFormat:@"%d/%d correct", totalCorrectAnswers, [Utility getMaxNumberArraySize]]
                               delegate:nil
                               cancelButtonTitle:@"Done"
                               otherButtonTitles:nil];
@@ -142,8 +170,14 @@
 - (void)resetData
 {
     curIndex = 0;
+    totalCorrectAnswers = 0;
+    
     // get new data from utility method, and store in local object 
     mathTableDataObjectArr = [MathUtility getMathUIObjectArray];
+    
+    // initialize score object
+    scores = [MathUtility getMathScoreObjectArray];
+
     [self bindData];
 }
 

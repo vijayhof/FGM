@@ -11,6 +11,7 @@
 		6705D2371711EA040097E0A8 /* TapButtonTableComponentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6705D2361711EA030097E0A8 /* TapButtonTableComponentController.m */; };
 		6719E40916D9530700C1D2C6 /* MathUIControlObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 6719E40816D9530700C1D2C6 /* MathUIControlObject.m */; };
 		6719E42616DADF2A00C1D2C6 /* BaseTableComponentController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6719E42516DADF2A00C1D2C6 /* BaseTableComponentController.xib */; };
+		6730FF1717261714003B5E04 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6730FF1617261714003B5E04 /* Crashlytics.framework */; };
 		6746B2C11719D30E0029E835 /* TakeTestComponentController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6746B2C01719D30E0029E835 /* TakeTestComponentController.xib */; };
 		6746B2C3171A04A40029E835 /* TakeTestComponentController.h in Resources */ = {isa = PBXBuildFile; fileRef = 6746B2C2171A04A40029E835 /* TakeTestComponentController.h */; };
 		6746B2C5171A05860029E835 /* TakeTestComponentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6746B2C4171A05860029E835 /* TakeTestComponentController.m */; };
@@ -56,6 +57,7 @@
 		6719E40716D9530700C1D2C6 /* MathUIControlObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MathUIControlObject.h; sourceTree = "<group>"; };
 		6719E40816D9530700C1D2C6 /* MathUIControlObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MathUIControlObject.m; sourceTree = "<group>"; };
 		6719E42516DADF2A00C1D2C6 /* BaseTableComponentController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BaseTableComponentController.xib; sourceTree = "<group>"; };
+		6730FF1617261714003B5E04 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		6746B2C01719D30E0029E835 /* TakeTestComponentController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TakeTestComponentController.xib; sourceTree = "<group>"; };
 		6746B2C2171A04A40029E835 /* TakeTestComponentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TakeTestComponentController.h; sourceTree = "<group>"; };
 		6746B2C4171A05860029E835 /* TakeTestComponentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TakeTestComponentController.m; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 				817C003F13FBE5100082747C /* UIKit.framework in Frameworks */,
 				817C004113FBE5100082747C /* Foundation.framework in Frameworks */,
 				674CA08E171F9DFB002652C2 /* CoreGraphics.framework in Frameworks */,
+				6730FF1717261714003B5E04 /* Crashlytics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,7 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				6746B2BC1719D2700029E835 /* xib */,
-				6746B2BF1719D2A50029E835 /* controller etc */,
+				6746B2BF1719D2A50029E835 /* delegate controller etc */,
 				6746B2BE1719D2800029E835 /* common */,
 			);
 			name = Current;
@@ -161,9 +164,11 @@
 			name = common;
 			sourceTree = "<group>";
 		};
-		6746B2BF1719D2A50029E835 /* controller etc */ = {
+		6746B2BF1719D2A50029E835 /* delegate controller etc */ = {
 			isa = PBXGroup;
 			children = (
+				817C004B13FBE5100082747C /* AppDelegate.h */,
+				67C2370716CAF125003D0878 /* AppDelegate.m */,
 				817C005D13FBE8F60082747C /* BaseTableComponentController.h */,
 				817C005E13FBE8F60082747C /* BaseTableComponentController.m */,
 				6705D2341711E9AA0097E0A8 /* TapButtonTableComponentController.h */,
@@ -174,10 +179,8 @@
 				674CA084171F3C75002652C2 /* MoreTabComponentController.m */,
 				674CA086171F438C002652C2 /* AboutPageController.h */,
 				674CA087171F438C002652C2 /* AboutPageController.m */,
-				817C004B13FBE5100082747C /* AppDelegate.h */,
-				67C2370716CAF125003D0878 /* AppDelegate.m */,
 			);
-			name = "controller etc";
+			name = "delegate controller etc";
 			sourceTree = "<group>";
 		};
 		817C002F13FBE5100082747C = {
@@ -200,6 +203,7 @@
 		817C003D13FBE5100082747C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6730FF1617261714003B5E04 /* Crashlytics.framework */,
 				81F55CB313FF013F00299C77 /* AudioToolbox.framework */,
 				674CA08D171F9DFB002652C2 /* CoreGraphics.framework */,
 				817C003E13FBE5100082747C /* UIKit.framework */,
@@ -283,6 +287,7 @@
 				817C003613FBE5100082747C /* Sources */,
 				817C003713FBE5100082747C /* Frameworks */,
 				817C003813FBE5100082747C /* Resources */,
+				6730FF15172616C4003B5E04 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -353,6 +358,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6730FF15172616C4003B5E04 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Crashlytics.framework/run f6a01dc31fc3712779512835183c573444bd340a";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		817C003613FBE5100082747C /* Sources */ = {
@@ -452,6 +473,10 @@
 		817C005113FBE5100082747C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Pickers/Math Tables for Kids-Prefix.pch";
 				INFOPLIST_FILE = "Pickers/Math Tables for Kids-Info.plist";
@@ -464,6 +489,10 @@
 		817C005213FBE5100082747C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Pickers/Math Tables for Kids-Prefix.pch";
 				INFOPLIST_FILE = "Pickers/Math Tables for Kids-Info.plist";

@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
+//
+// For debug logging, use DLog or D2Log
+//
 #undef DEBUG
 
 #ifdef DEBUG
@@ -21,21 +24,39 @@
 
 @interface Constants : NSObject
 
+//
+// operands (or operations)
+//
 #define kADD_OP         @"ADD"
 #define kSUB_OP         @"SUB"
 #define kMUL_OP         @"MUL"
 #define kDIV_OP         @"DIV"
 
+//
+// operand (or operation) symbols
+//
 #define kADD_OP_SYM     @"+"
 #define kSUB_OP_SYM     @"-"
 #define kMUL_OP_SYM     @"x"
 #define kDIV_OP_SYM     @"/" // \u00F7
 
+
+//
+// Default values for some variables - initial number, initial operand, shuffle on/off setting, etc
+//
 #define kDefaultCurrentNumber            1
 #define kDefaultMaxNumberArraySize       10
 #define kDefaultCurrentOperation         kADD_OP
 #define kDefaultShuffleNumbers           false
 #define kDefaultShuffleOperations        false
+
+//
+// Constants used for Scoring
+//
+#define kQnANotAttempted                 @"NOT_ATTEMPTED"
+#define kQnACorrectAnswer                @"CORRECT_ANSWER"
+#define kQnAWrongAnswer                  @"WRONG_ANSWER"
+
 
 //
 // Constants for custom application data stored in archive file

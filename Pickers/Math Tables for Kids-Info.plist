@@ -13,11 +13,9 @@
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleIconFiles</key>
-	<array>
-		<string></string>
-	</array>
+	<array/>
 	<key>CFBundleIdentifier</key>
-	<string>com.hcsninc.${PRODUCT_NAME:rfc1034identifier}</string>
+	<string>com.hcsninc.ios.FGM</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>

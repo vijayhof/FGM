@@ -11,6 +11,7 @@
 #import "PersistentApplicationData.h"
 #import "Utility.h"
 #import "SingleAppDataObject.h"
+#import <Crashlytics/Crashlytics.h>
 
 @implementation AppDelegate
 
@@ -38,7 +39,7 @@
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{
+{    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     [[NSBundle mainBundle] loadNibNamed:@"TabBarController" owner:self options:nil];
@@ -47,6 +48,8 @@
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     
+    [Crashlytics startWithAPIKey:@"f6a01dc31fc3712779512835183c573444bd340a"];
+
     return YES;
 }
 

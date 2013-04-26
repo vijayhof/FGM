@@ -15,6 +15,10 @@
 // data object (array) that will be used in the flow and displayed in the UI
 @property (strong, nonatomic) NSMutableArray* mathTableDataObjectArr;
 
+// scores for the questions and answers. identifies if the question was attempted, answer was correct or wrong
+@property (strong, nonatomic) NSMutableArray* scores;
+@property (nonatomic) int totalCorrectAnswers;
+
 // current index into the data object array. data object array contains the multiple questions asked
 @property (nonatomic) int curIndex;
 

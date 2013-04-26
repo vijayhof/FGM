@@ -77,6 +77,18 @@
     
 }
 
++ (NSMutableArray*) getMathScoreObjectArray
+{
+    int maxSize = [Utility getMaxNumberArraySize];
+    NSMutableArray* scoreArr  = [[NSMutableArray alloc] initWithCapacity:maxSize];
+    for(int i = 0; i < maxSize; i++)
+    {
+        [scoreArr addObject:kQnANotAttempted];
+    }
+    
+    return scoreArr;
+}
+
 
 + (NSMutableArray*) getMathUIObjectArray
 {
