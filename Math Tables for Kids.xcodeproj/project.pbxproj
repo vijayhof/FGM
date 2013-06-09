@@ -96,7 +96,7 @@
 		817C003A13FBE5100082747C /* Math Tables for Kids.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Math Tables for Kids.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		817C003E13FBE5100082747C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		817C004013FBE5100082747C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		817C004413FBE5100082747C /* Math Tables for Kids-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Math Tables for Kids-Info.plist"; sourceTree = "<group>"; };
+		817C004413FBE5100082747C /* Math_Tables_for_Kids-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Math_Tables_for_Kids-Info.plist"; sourceTree = "<group>"; };
 		817C004613FBE5100082747C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		817C004813FBE5100082747C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		817C004A13FBE5100082747C /* Math Tables for Kids-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Math Tables for Kids-Prefix.pch"; sourceTree = "<group>"; };
@@ -228,7 +228,7 @@
 		817C004313FBE5100082747C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				817C004413FBE5100082747C /* Math Tables for Kids-Info.plist */,
+				817C004413FBE5100082747C /* Math_Tables_for_Kids-Info.plist */,
 				817C004513FBE5100082747C /* InfoPlist.strings */,
 				817C004813FBE5100082747C /* main.m */,
 				817C004A13FBE5100082747C /* Math Tables for Kids-Prefix.pch */,
@@ -479,7 +479,7 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Pickers/Math Tables for Kids-Prefix.pch";
-				INFOPLIST_FILE = "Pickers/Math Tables for Kids-Info.plist";
+				INFOPLIST_FILE = "Pickers/Math_Tables_for_Kids-Info.plist";
 				PRODUCT_NAME = "Math Tables for Kids";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
@@ -495,7 +495,7 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Pickers/Math Tables for Kids-Prefix.pch";
-				INFOPLIST_FILE = "Pickers/Math Tables for Kids-Info.plist";
+				INFOPLIST_FILE = "Pickers/Math_Tables_for_Kids-Info.plist";
 				PRODUCT_NAME = "Math Tables for Kids";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;

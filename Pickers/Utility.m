@@ -56,7 +56,6 @@
     PersistentApplicationData *persistentApplicationData = [unarchiver decodeObjectForKey:kCustomAppDataKey];
     [unarchiver finishDecoding];
     
-    
     return persistentApplicationData;
 }
 

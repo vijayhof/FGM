@@ -123,10 +123,10 @@
 }
 
 #pragma mark - View lifecycle
-- (void)viewDidLoad
+- (void)viewDidAppear:(BOOL)animated
 {
-    [super viewDidLoad];
-    
+//    D2Log(@"viewwillappear %d", animated);
+
     int maxSize = [Utility getMaxNumberArraySize];
 
     // initialize stepper control
@@ -253,6 +253,12 @@
     
     [self bindData:[MathUtility getMathUIObjectArray]];
     
+    [super viewDidAppear:animated];
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
 }
 
 - (void)viewDidUnload

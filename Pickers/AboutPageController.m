@@ -18,7 +18,9 @@
     
     [super viewDidLoad];
     
-    [label setNumberOfLines:0];
+    self.message = [[NSString alloc] initWithFormat:@"Version %@", [self readVersionFromPlist] ];
+    
+//    [label setNumberOfLines:0];
 //    [label sizeToFit];
 }
 
@@ -30,6 +32,10 @@
     [super viewWillAppear:animated];
 }
 
-
+- (NSString*)readVersionFromPlist
+{
+    NSString* value = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
+    return value;
+}
 
 @end

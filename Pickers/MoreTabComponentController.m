@@ -33,10 +33,21 @@
     self.title = @"More";
     NSMutableArray *dictArray = [[NSMutableArray alloc] init];
     NSMutableDictionary* tmpDict = NULL;
+
+    // Share
+    NSArray* arrayActivityItems = [NSArray arrayWithObjects:@"Good App", @"Math Tables for Kids", nil];
+    UIActivityViewController* activityVC = [[UIActivityViewController alloc]
+                                            initWithActivityItems:arrayActivityItems applicationActivities:nil];
+    activityVC.excludedActivityTypes = @[UIActivityTypeAssignToContact, UIActivityTypeCopyToPasteboard, UIActivityTypePrint, UIActivityTypeSaveToCameraRoll, UIActivityTypePostToWeibo];
+    activityVC.title = @"Share";
+    tmpDict = [[NSMutableDictionary alloc] init];
+    [tmpDict setObject:activityVC forKey:@"Share"];
+    [dictArray addObject:tmpDict];
+    tmpDict = NULL;
+
     // About Page
     AboutPageController* aboutPageController = [[AboutPageController alloc]
                                                 initWithNibName:@"AboutPageController" bundle:nil];
-    aboutPageController.message = @"Version 2.1";
     aboutPageController.title = @"About";
     tmpDict = [[NSMutableDictionary alloc] init];
     [tmpDict setObject:aboutPageController forKey:@"About"];
@@ -48,7 +59,14 @@
     [tmpDict setObject:[[NSNull alloc] init] forKey:@"Feedback"];
     [dictArray addObject:tmpDict];
     tmpDict = NULL;
-    
+
+    // Give Rating
+    tmpDict = [[NSMutableDictionary alloc] init];
+    [tmpDict setObject:[[NSNull alloc] init] forKey:@"Rating"];
+    [dictArray addObject:tmpDict];
+    tmpDict = NULL;
+
+
     self.listEntries = dictArray;
 }
 
@@ -88,7 +106,11 @@
     NSMutableDictionary* dictEntry = [self.listEntries objectAtIndex:row];
     id tmpObj = [[dictEntry allValues] objectAtIndex:0];
     NSString* tmpStr = [[dictEntry allKeys] objectAtIndex:0];
-    if([tmpObj isKindOfClass:[UIViewController class]])
+    if([tmpStr isEqualToString:@"Share"])
+    {
+        [self presentViewController:tmpObj animated:YES completion:nil];
+    }
+    else if([tmpObj isKindOfClass:[UIViewController class]])
     {
         [self.navigationController pushViewController:tmpObj
                                              animated:YES];
@@ -96,9 +118,14 @@
     }
     else if([tmpStr isEqualToString:@"Feedback"])
     {
-        D2Log(@"give feedback");
         [Utility launchMailAppOnDevice:@"support@hcsninc.com" cc:@"" bcc:@"" subject:@"Giving Feedback on" body:@""];
-        D2Log(@"give feedback end");
+    }
+    else if([tmpStr isEqualToString:@"Rating"])
+    {
+        NSString *templateReviewURL = @"itms-apps://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=APP_ID";
+        
+        NSString *reviewURL = [templateReviewURL stringByReplacingOccurrencesOfString:@"APP_ID" withString:[NSString stringWithFormat:@"%@", @"641692138"]];
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:reviewURL]];
     }
 }
 

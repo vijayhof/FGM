@@ -80,6 +80,12 @@
 //
 - (IBAction)numberButtonPressed:(UIButton *)sender
 {
+    if([userEnteredNumber length] >= 3)
+    {
+        mathUiControlObject.resultNumberLabel.textColor = [UIColor redColor];
+        return;
+    }
+    
     [userEnteredNumber appendFormat:@"%d",sender.tag];
     [mathUiControlObject.resultNumberLabel setText:userEnteredNumber];
     mathUiControlObject.resultNumberLabel.textColor = [UIColor blackColor];
@@ -228,10 +234,8 @@
 }
 
 #pragma mark - View lifecycle
-- (void)viewDidLoad
+- (void)viewDidAppear:(BOOL)animated
 {
-    [super viewDidLoad];
-    
     // initialize enteredResult
     userEnteredNumber = [[NSMutableString alloc] init];
     
@@ -268,6 +272,8 @@
     
     // reset the data object (array) to be used for the flow
     [self resetData];
+    
+    [super viewDidAppear:animated];
 }
 
 - (void)viewDidUnload
