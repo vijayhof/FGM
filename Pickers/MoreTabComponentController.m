@@ -34,6 +34,12 @@
     NSMutableArray *dictArray = [[NSMutableArray alloc] init];
     NSMutableDictionary* tmpDict = NULL;
 
+    // Give Rating
+    tmpDict = [[NSMutableDictionary alloc] init];
+    [tmpDict setObject:[[NSNull alloc] init] forKey:@"Rating"];
+    [dictArray addObject:tmpDict];
+    tmpDict = NULL;
+    
     // Share
     NSArray* arrayActivityItems = [NSArray arrayWithObjects:@"Good App", @"Math Tables for Kids", nil];
     UIActivityViewController* activityVC = [[UIActivityViewController alloc]
@@ -42,6 +48,12 @@
     activityVC.title = @"Share";
     tmpDict = [[NSMutableDictionary alloc] init];
     [tmpDict setObject:activityVC forKey:@"Share"];
+    [dictArray addObject:tmpDict];
+    tmpDict = NULL;
+
+    // Give Feedback
+    tmpDict = [[NSMutableDictionary alloc] init];
+    [tmpDict setObject:[[NSNull alloc] init] forKey:@"Feedback"];
     [dictArray addObject:tmpDict];
     tmpDict = NULL;
 
@@ -54,18 +66,6 @@
     [dictArray addObject:tmpDict];
     tmpDict = NULL;
     
-    // Give Feedback
-    tmpDict = [[NSMutableDictionary alloc] init];
-    [tmpDict setObject:[[NSNull alloc] init] forKey:@"Feedback"];
-    [dictArray addObject:tmpDict];
-    tmpDict = NULL;
-
-    // Give Rating
-    tmpDict = [[NSMutableDictionary alloc] init];
-    [tmpDict setObject:[[NSNull alloc] init] forKey:@"Rating"];
-    [dictArray addObject:tmpDict];
-    tmpDict = NULL;
-
 
     self.listEntries = dictArray;
 }

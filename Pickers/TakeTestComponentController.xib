@@ -46,7 +46,7 @@
 					<object class="IBUISegmentedControl" id="446740209">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{20, 20}, {280, 44}}</string>
+						<string key="NSFrame">{{20, 11}, {280, 44}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSNextKeyView" ref="704421503"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
@@ -202,7 +202,7 @@
 					<object class="IBUIStepper" id="433726656">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">289</int>
-						<string key="NSFrame">{{197, 370}, {94, 27}}</string>
+						<string key="NSFrame">{{213, 374}, {94, 27}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
@@ -217,7 +217,7 @@
 					<object class="IBUISwitch" id="29278661">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{66, 370}, {94, 27}}</string>
+						<string key="NSFrame">{{70, 374}, {94, 27}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSNextKeyView" ref="433726656"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
@@ -229,7 +229,7 @@
 					<object class="IBUILabel" id="676327358">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{17, 373}, {58, 21}}</string>
+						<string key="NSFrame">{{21, 377}, {58, 21}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSNextKeyView" ref="29278661"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
@@ -485,7 +485,7 @@
 						<int key="IBUIContentHorizontalAlignment">0</int>
 						<int key="IBUIContentVerticalAlignment">0</int>
 						<int key="IBUIButtonType">1</int>
-						<string key="IBUINormalTitle">Clr</string>
+						<string key="IBUINormalTitle">Clear</string>
 						<reference key="IBUIHighlightedTitleColor" ref="390775778"/>
 						<object class="NSColor" key="IBUINormalTitleColor">
 							<int key="NSColorSpace">1</int>
