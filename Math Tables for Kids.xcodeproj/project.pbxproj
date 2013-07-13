@@ -22,6 +22,7 @@
 		67790C671724AD29009616EE /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 67790C641724AD29009616EE /* Default.png */; };
 		67790C681724AD29009616EE /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 67790C651724AD29009616EE /* Default@2x.png */; };
 		67790C691724AD29009616EE /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 67790C661724AD29009616EE /* Default-568h@2x.png */; };
+		67AC3CD9178F48A500FBE9D9 /* CustomRowUIView.m in Sources */ = {isa = PBXBuildFile; fileRef = 67AC3CD8178F48A500FBE9D9 /* CustomRowUIView.m */; };
 		67C2370416C9F0D9003D0878 /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 67C2370316C7366B003D0878 /* Utility.m */; };
 		67C2370816CAF125003D0878 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 67C2370716CAF125003D0878 /* AppDelegate.m */; };
 		67C2370F16CB35C8003D0878 /* MathTableDataObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 67C2370E16CB35C8003D0878 /* MathTableDataObject.m */; };
@@ -70,6 +71,8 @@
 		67790C641724AD29009616EE /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		67790C651724AD29009616EE /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		67790C661724AD29009616EE /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		67AC3CD7178F48A500FBE9D9 /* CustomRowUIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomRowUIView.h; sourceTree = "<group>"; };
+		67AC3CD8178F48A500FBE9D9 /* CustomRowUIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomRowUIView.m; sourceTree = "<group>"; };
 		67C236FA16C73454003D0878 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		67C236FE16C73609003D0878 /* PersistentApplicationData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PersistentApplicationData.h; sourceTree = "<group>"; };
 		67C236FF16C73609003D0878 /* PersistentApplicationData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PersistentApplicationData.m; sourceTree = "<group>"; };
@@ -179,6 +182,8 @@
 				674CA084171F3C75002652C2 /* MoreTabComponentController.m */,
 				674CA086171F438C002652C2 /* AboutPageController.h */,
 				674CA087171F438C002652C2 /* AboutPageController.m */,
+				67AC3CD7178F48A500FBE9D9 /* CustomRowUIView.h */,
+				67AC3CD8178F48A500FBE9D9 /* CustomRowUIView.m */,
 			);
 			name = "delegate controller etc";
 			sourceTree = "<group>";
@@ -392,6 +397,7 @@
 				6746B2C5171A05860029E835 /* TakeTestComponentController.m in Sources */,
 				674CA085171F3C76002652C2 /* MoreTabComponentController.m in Sources */,
 				674CA088171F438C002652C2 /* AboutPageController.m in Sources */,
+				67AC3CD9178F48A500FBE9D9 /* CustomRowUIView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

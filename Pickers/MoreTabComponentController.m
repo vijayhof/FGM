@@ -10,6 +10,15 @@
 #import "AboutPageController.h"
 #import "Utility.h"
 
+#define kRateAppString                 @"Rate this App"
+#define kShareAppString                @"Share this App"
+#define kGiveFeedbackString            @"Give Feedback"
+
+@interface MoreTabComponentController ()
+
+
+@end
+
 @implementation MoreTabComponentController
 
 @synthesize listEntries;
@@ -36,24 +45,26 @@
 
     // Give Rating
     tmpDict = [[NSMutableDictionary alloc] init];
-    [tmpDict setObject:[[NSNull alloc] init] forKey:@"Rating"];
+    [tmpDict setObject:[[NSNull alloc] init] forKey:kRateAppString];
     [dictArray addObject:tmpDict];
     tmpDict = NULL;
     
     // Share
-    NSArray* arrayActivityItems = [NSArray arrayWithObjects:@"Good App", @"Math Tables for Kids", nil];
+    NSArray* arrayActivityItems = [NSArray arrayWithObjects:@"Get this app 'Math Tables for Kids' on AppStore - http://itunes.apple.com/us/app/math-tables-for-kids/id641692138?mt=8",nil];
     UIActivityViewController* activityVC = [[UIActivityViewController alloc]
                                             initWithActivityItems:arrayActivityItems applicationActivities:nil];
     activityVC.excludedActivityTypes = @[UIActivityTypeAssignToContact, UIActivityTypeCopyToPasteboard, UIActivityTypePrint, UIActivityTypeSaveToCameraRoll, UIActivityTypePostToWeibo];
-    activityVC.title = @"Share";
+    activityVC.title = kShareAppString;
+    [activityVC setValue:@"Sharing a Math app" forKey:@"subject"];
+
     tmpDict = [[NSMutableDictionary alloc] init];
-    [tmpDict setObject:activityVC forKey:@"Share"];
+    [tmpDict setObject:activityVC forKey:kShareAppString];
     [dictArray addObject:tmpDict];
     tmpDict = NULL;
 
     // Give Feedback
     tmpDict = [[NSMutableDictionary alloc] init];
-    [tmpDict setObject:[[NSNull alloc] init] forKey:@"Feedback"];
+    [tmpDict setObject:[[NSNull alloc] init] forKey:kGiveFeedbackString];
     [dictArray addObject:tmpDict];
     tmpDict = NULL;
 
@@ -106,7 +117,7 @@
     NSMutableDictionary* dictEntry = [self.listEntries objectAtIndex:row];
     id tmpObj = [[dictEntry allValues] objectAtIndex:0];
     NSString* tmpStr = [[dictEntry allKeys] objectAtIndex:0];
-    if([tmpStr isEqualToString:@"Share"])
+    if([tmpStr isEqualToString:kShareAppString])
     {
         [self presentViewController:tmpObj animated:YES completion:nil];
     }
@@ -116,11 +127,11 @@
                                              animated:YES];
         
     }
-    else if([tmpStr isEqualToString:@"Feedback"])
+    else if([tmpStr isEqualToString:kGiveFeedbackString])
     {
         [Utility launchMailAppOnDevice:@"support@hcsninc.com" cc:@"" bcc:@"" subject:@"Giving Feedback on" body:@""];
     }
-    else if([tmpStr isEqualToString:@"Rating"])
+    else if([tmpStr isEqualToString:kRateAppString])
     {
         NSString *templateReviewURL = @"itms-apps://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=APP_ID";
         
