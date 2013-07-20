@@ -11,8 +11,8 @@
 + (NSMutableArray*) getFirstNumberArray;
 + (NSMutableArray*) getSecondNumberArray;
 + (NSMutableArray*) getOperandArray;
-+ (NSMutableArray*) getMathUIObjectArray;
-+ (NSMutableArray*) getMathScoreObjectArray;
++ (NSMutableArray*) getMathTableDataObjectArray;
+//+ (NSMutableArray*) getMathScoreObjectArray;
 + (NSString*) getOperandSymbol: (NSString *) operandName;
 + (NSMutableArray*) getRandomNumberArray: (int) size;
 

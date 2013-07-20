@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+@class MathScore;
+
 @interface PersistentApplicationData : NSObject <NSCoding, NSCopying>
 
 @property (nonatomic) int currentNumber;
@@ -15,5 +17,6 @@
 @property (strong,nonatomic) NSString* currentOperation;
 @property (nonatomic) BOOL shuffleNumbers;
 @property (nonatomic) BOOL shuffleOperations;
+@property (strong,nonatomic) NSMutableArray* mathScores;
 
 @end

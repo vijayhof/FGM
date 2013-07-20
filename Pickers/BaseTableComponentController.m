@@ -50,21 +50,21 @@
     }
     
     [Utility setCurrentOperation:tmpStr];
-    [self bindData:[MathUtility getMathUIObjectArray]];
+    [self bindData:[MathUtility getMathTableDataObjectArray]];
     
 }
 
 - (IBAction)shufflePressed:(UISwitch*)sender
 {
     [Utility setShuffleNumbers:sender.on];
-    [self bindData:[MathUtility getMathUIObjectArray]];
+    [self bindData:[MathUtility getMathTableDataObjectArray]];
 }
 
 - (IBAction)stepperPressed:(UIStepper *)sender
 {
     double value = [sender value];
     [Utility setCurrentNumber:(int) value];
-    [self bindData:[MathUtility getMathUIObjectArray]];
+    [self bindData:[MathUtility getMathTableDataObjectArray]];
 }
 
 - (IBAction)tapButtonPressed:(UIButton *)sender
@@ -251,7 +251,7 @@
     [mathUiControlObjectArr addObject:mathUiControlObject];
     
     
-    [self bindData:[MathUtility getMathUIObjectArray]];
+    [self bindData:[MathUtility getMathTableDataObjectArray]];
     
     [super viewDidAppear:animated];
 }

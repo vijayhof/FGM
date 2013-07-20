@@ -9,9 +9,12 @@
 /* Begin PBXBuildFile section */
 		6705D2351711E9AA0097E0A8 /* TapButtonTableComponentController.h in Resources */ = {isa = PBXBuildFile; fileRef = 6705D2341711E9AA0097E0A8 /* TapButtonTableComponentController.h */; };
 		6705D2371711EA040097E0A8 /* TapButtonTableComponentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6705D2361711EA030097E0A8 /* TapButtonTableComponentController.m */; };
+		670C7966179A321A00C93115 /* CHCircularBuffer.m in Sources */ = {isa = PBXBuildFile; fileRef = 670C7965179A321A00C93115 /* CHCircularBuffer.m */; };
+		670C7969179A322A00C93115 /* Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 670C7968179A322A00C93115 /* Util.m */; };
 		6719E40916D9530700C1D2C6 /* MathUIControlObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 6719E40816D9530700C1D2C6 /* MathUIControlObject.m */; };
 		6719E42616DADF2A00C1D2C6 /* BaseTableComponentController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6719E42516DADF2A00C1D2C6 /* BaseTableComponentController.xib */; };
 		6730FF1717261714003B5E04 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6730FF1617261714003B5E04 /* Crashlytics.framework */; };
+		673D5DAE179234E1007A4C3E /* MathScore.m in Sources */ = {isa = PBXBuildFile; fileRef = 673D5DAD179234E1007A4C3E /* MathScore.m */; };
 		6746B2C11719D30E0029E835 /* TakeTestComponentController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6746B2C01719D30E0029E835 /* TakeTestComponentController.xib */; };
 		6746B2C3171A04A40029E835 /* TakeTestComponentController.h in Resources */ = {isa = PBXBuildFile; fileRef = 6746B2C2171A04A40029E835 /* TakeTestComponentController.h */; };
 		6746B2C5171A05860029E835 /* TakeTestComponentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6746B2C4171A05860029E835 /* TakeTestComponentController.m */; };
@@ -55,10 +58,16 @@
 /* Begin PBXFileReference section */
 		6705D2341711E9AA0097E0A8 /* TapButtonTableComponentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TapButtonTableComponentController.h; sourceTree = "<group>"; };
 		6705D2361711EA030097E0A8 /* TapButtonTableComponentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TapButtonTableComponentController.m; sourceTree = "<group>"; };
+		670C7964179A321A00C93115 /* CHCircularBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHCircularBuffer.h; sourceTree = "<group>"; };
+		670C7965179A321A00C93115 /* CHCircularBuffer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHCircularBuffer.m; sourceTree = "<group>"; };
+		670C7967179A322A00C93115 /* Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Util.h; sourceTree = "<group>"; };
+		670C7968179A322A00C93115 /* Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Util.m; sourceTree = "<group>"; };
 		6719E40716D9530700C1D2C6 /* MathUIControlObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MathUIControlObject.h; sourceTree = "<group>"; };
 		6719E40816D9530700C1D2C6 /* MathUIControlObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MathUIControlObject.m; sourceTree = "<group>"; };
 		6719E42516DADF2A00C1D2C6 /* BaseTableComponentController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BaseTableComponentController.xib; sourceTree = "<group>"; };
 		6730FF1617261714003B5E04 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
+		673D5DAC179234E1007A4C3E /* MathScore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MathScore.h; sourceTree = "<group>"; };
+		673D5DAD179234E1007A4C3E /* MathScore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MathScore.m; sourceTree = "<group>"; };
 		6746B2C01719D30E0029E835 /* TakeTestComponentController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TakeTestComponentController.xib; sourceTree = "<group>"; };
 		6746B2C2171A04A40029E835 /* TakeTestComponentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TakeTestComponentController.h; sourceTree = "<group>"; };
 		6746B2C4171A05860029E835 /* TakeTestComponentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TakeTestComponentController.m; sourceTree = "<group>"; };
@@ -128,9 +137,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		670C7963179A31FC00C93115 /* chdatastructure */ = {
+			isa = PBXGroup;
+			children = (
+				670C7967179A322A00C93115 /* Util.h */,
+				670C7968179A322A00C93115 /* Util.m */,
+				670C7964179A321A00C93115 /* CHCircularBuffer.h */,
+				670C7965179A321A00C93115 /* CHCircularBuffer.m */,
+			);
+			name = chdatastructure;
+			sourceTree = "<group>";
+		};
 		6719E40B16D9A29000C1D2C6 /* Current */ = {
 			isa = PBXGroup;
 			children = (
+				670C7963179A31FC00C93115 /* chdatastructure */,
 				6746B2BC1719D2700029E835 /* xib */,
 				6746B2BF1719D2A50029E835 /* delegate controller etc */,
 				6746B2BE1719D2800029E835 /* common */,
@@ -157,6 +178,8 @@
 				67C2370316C7366B003D0878 /* Utility.m */,
 				67C2371016CD4B97003D0878 /* MathUtility.h */,
 				67C2371116CD4B97003D0878 /* MathUtility.m */,
+				673D5DAC179234E1007A4C3E /* MathScore.h */,
+				673D5DAD179234E1007A4C3E /* MathScore.m */,
 				67C2370D16CB35C7003D0878 /* MathTableDataObject.h */,
 				67C2370E16CB35C8003D0878 /* MathTableDataObject.m */,
 				6719E40716D9530700C1D2C6 /* MathUIControlObject.h */,
@@ -398,6 +421,9 @@
 				674CA085171F3C76002652C2 /* MoreTabComponentController.m in Sources */,
 				674CA088171F438C002652C2 /* AboutPageController.m in Sources */,
 				67AC3CD9178F48A500FBE9D9 /* CustomRowUIView.m in Sources */,
+				673D5DAE179234E1007A4C3E /* MathScore.m in Sources */,
+				670C7966179A321A00C93115 /* CHCircularBuffer.m in Sources */,
+				670C7969179A322A00C93115 /* Util.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

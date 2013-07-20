@@ -53,9 +53,9 @@
 //
 // Constants used for Scoring
 //
-#define kQnANotAttempted                 @"NOT_ATTEMPTED"
-#define kQnACorrectAnswer                @"CORRECT_ANSWER"
-#define kQnAWrongAnswer                  @"WRONG_ANSWER"
+//#define kQnANotAttempted                 @"NOT_ATTEMPTED"
+//#define kQnACorrectAnswer                @"CORRECT_ANSWER"
+//#define kQnAWrongAnswer                  @"WRONG_ANSWER"
 
 
 //

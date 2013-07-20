@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+@class MathScore;
+
 @class MathUIControlObject;
 
 @interface TakeTestComponentController : UIViewController
@@ -16,7 +18,7 @@
 @property (strong, nonatomic) NSMutableArray* mathTableDataObjectArr;
 
 // scores for the questions and answers. identifies if the question was attempted, answer was correct or wrong
-@property (strong, nonatomic) NSMutableArray* scores;
+@property (strong, nonatomic) MathScore* mathScore;
 @property (nonatomic) int totalCorrectAnswers;
 
 // current index into the data object array. data object array contains the multiple questions asked

@@ -11,11 +11,12 @@
 #import "MathTableDataObject.h"
 #import "Utility.h"
 #import "MathUtility.h"
+#import "MathScore.h"
 
 @implementation TakeTestComponentController
 
 @synthesize mathTableDataObjectArr;
-@synthesize scores;
+@synthesize mathScore;
 @synthesize totalCorrectAnswers;
 
 @synthesize curIndex;
@@ -113,17 +114,17 @@
     if(actualResultInt != userEnteredNumberInt)
     {
         // update score as wrong answer
-        [scores replaceObjectAtIndex:curIndex withObject:kQnAWrongAnswer];
+        [mathScore setAnswerAtIndex:curIndex withAnswerType:kQnAWrongAnswer];
         
         mathUiControlObject.resultNumberLabel.textColor = [UIColor redColor];
         [userEnteredNumber setString:@""];
         return;
     }
 
-    if([[scores objectAtIndex:curIndex] isEqualToString:kQnANotAttempted])
+    if([mathScore answerAtIndex:curIndex] == kQnANotAttempted)
     {
         // update score as correct answer
-        [scores replaceObjectAtIndex:curIndex withObject:kQnACorrectAnswer];
+        [mathScore setAnswerAtIndex:curIndex withAnswerType:kQnACorrectAnswer];
         totalCorrectAnswers++;
     }
     
@@ -179,10 +180,10 @@
     totalCorrectAnswers = 0;
     
     // get new data from utility method, and store in local object 
-    mathTableDataObjectArr = [MathUtility getMathUIObjectArray];
+    mathTableDataObjectArr = [MathUtility getMathTableDataObjectArray];
     
     // initialize score object
-    scores = [MathUtility getMathScoreObjectArray];
+    mathScore = [[MathScore alloc] initWithMathTableObjectArray:mathTableDataObjectArr];
 
     [self bindData];
 }

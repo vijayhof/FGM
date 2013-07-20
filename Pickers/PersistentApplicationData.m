@@ -14,6 +14,7 @@
 #define    kCurrentOperationKey     @"currentOperation"
 #define    kShuffleNumbersKey       @"shuffleNumbers"
 #define    kShuffleOperationsKey    @"shuffleOperations"
+#define    kMathScoresKey           @"mathScores"
 
 @implementation PersistentApplicationData
 
@@ -22,6 +23,7 @@
 @synthesize currentOperation;
 @synthesize shuffleNumbers;
 @synthesize shuffleOperations;
+@synthesize mathScores;
 
 - (id) init
 {
@@ -32,6 +34,7 @@
         self.currentOperation   = kDefaultCurrentOperation;
         self.shuffleNumbers     = false;
         self.shuffleOperations  = false;
+        self.mathScores         = nil;
     }
     return self;
 }
@@ -44,7 +47,8 @@
     [encoder encodeObject:currentOperation forKey:kCurrentOperationKey]; 
     [encoder encodeBool:shuffleNumbers     forKey:kShuffleNumbersKey];
     [encoder encodeBool:shuffleOperations  forKey:kShuffleOperationsKey];
-} 
+    [encoder encodeObject:mathScores       forKey:kMathScoresKey];
+}
 
 - (id)initWithCoder:(NSCoder *)decoder
 { 
@@ -55,6 +59,7 @@
         currentOperation   = [decoder decodeObjectForKey:kCurrentOperationKey]; 
         shuffleNumbers     = [decoder decodeBoolForKey:kShuffleNumbersKey];
         shuffleOperations  = [decoder decodeBoolForKey:kShuffleOperationsKey];
+        mathScores         = [decoder decodeObjectForKey:kMathScoresKey];
     }
     
     return self; 
@@ -67,10 +72,11 @@
     PersistentApplicationData *copy = [[[self class] allocWithZone:zone] init]; 
     copy.currentNumber      = self.currentNumber;
     copy.maxNumberArraySize = self.maxNumberArraySize;
-    copy.currentOperation   = self.currentOperation; 
+    copy.currentOperation   = [self.currentOperation copyWithZone:zone];
     copy.shuffleNumbers     = self.shuffleNumbers; 
     copy.shuffleOperations  = self.shuffleOperations; 
-    return copy; 
+    copy.mathScores         = [self.mathScores copyWithZone:zone];
+    return copy;
 }
 
 @end

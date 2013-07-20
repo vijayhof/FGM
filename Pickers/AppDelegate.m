@@ -26,13 +26,12 @@
     self.persistentApplicationData = [Utility readFromArchive];
     if(self.persistentApplicationData == nil)
     {
-        D2Log(@"cAD is null");
+        D2Log(@"persistent data is null");
         self.persistentApplicationData = [[PersistentApplicationData alloc] init];
     }
     else
     {
-        D2Log(@"cAD is not null");
-        D2Log(@"cAD: %d %d %@ %@ %@", persistentApplicationData.currentNumber, persistentApplicationData.maxNumberArraySize, persistentApplicationData.currentOperation, persistentApplicationData.shuffleNumbers ?@"YES" : @"NO", persistentApplicationData.shuffleOperations ? @"YES" : @"NO");
+        D2Log(@"persistent data: currentNumber=%d, maxNumberArraySize=%d, currentOperation=%@, shuffleNumbers=%@, shuffleOperations=%@", persistentApplicationData.currentNumber, persistentApplicationData.maxNumberArraySize, persistentApplicationData.currentOperation, persistentApplicationData.shuffleNumbers ?@"YES" : @"NO", persistentApplicationData.shuffleOperations ? @"YES" : @"NO");
     }
     
 	return [super init];
