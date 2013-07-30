@@ -84,7 +84,7 @@
 {
     if([userEnteredNumber length] >= 3)
     {
-        mathUiControlObject.resultNumberLabel.textColor = [UIColor redColor];
+        [self markAsWrongAnswer];
         return;
     }
     
@@ -103,6 +103,21 @@
 }
 
 //
+// mark current answer as wrong
+// > color it red
+// > set it as wrong in the mathscore object
+// > for next text entry, clear the previous data in label
+//
+- (void)markAsWrongAnswer
+{
+    // update score as wrong answer
+    [mathScore setAnswerAtIndex:curIndex withAnswerType:kQnAWrongAnswer];
+    
+    mathUiControlObject.resultNumberLabel.textColor = [UIColor redColor];
+    [userEnteredNumber setString:@""];
+}
+
+//
 // handle go button
 //
 - (IBAction)goButtonPressed:(UIButton *)sender
@@ -112,11 +127,7 @@
 
     if(actualResultInt != userEnteredNumberInt)
     {
-        // update score as wrong answer
-        [mathScore setAnswerAtIndex:curIndex withAnswerType:kQnAWrongAnswer];
-        
-        mathUiControlObject.resultNumberLabel.textColor = [UIColor redColor];
-        [userEnteredNumber setString:@""];
+        [self markAsWrongAnswer];
         return;
     }
 
@@ -135,7 +146,8 @@
     if(curIndex >= 10)
     {
         CHCircularBuffer* circularBuffer = [Utility getMathScores];
-        [circularBuffer addObject:mathScore];
+        [circularBuffer insertObject:mathScore atIndex:0];
+//        [circularBuffer addObject:mathScore];
         [Utility setMathScores:circularBuffer];
         
         NSString* tmpKudosString;
