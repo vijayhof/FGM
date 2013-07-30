@@ -8,20 +8,28 @@
 #import "Constants.h"
 #import "MoreTabComponentController.h"
 #import "AboutPageController.h"
+#import "ViewScoreTableViewController.h"
 #import "Utility.h"
 
+#define kMoreTopSection                @"My Stuff"
+#define kMoreBottomSection             @"App Info"
+
+#define kViewScoreString               @"View Scores"
 #define kRateAppString                 @"Rate this App"
 #define kShareAppString                @"Share this App"
 #define kGiveFeedbackString            @"Give Feedback"
 
 @interface MoreTabComponentController ()
 
+@property (strong, nonatomic) NSMutableArray *sectionArray;
+@property (strong, nonatomic) NSMutableDictionary *dataDictionary;
 
 @end
 
 @implementation MoreTabComponentController
 
-@synthesize listEntries;
+@synthesize sectionArray = _sectioNArray;
+@synthesize dataDictionary = _dataDictionary;
 
 #pragma mark -
 - (void) loadView
@@ -31,6 +39,8 @@
     UITableView* tv = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
     tv.dataSource = self;
     tv.delegate = self;
+    [tv setBackgroundView:nil];
+    tv.backgroundColor = [UIColor colorWithRed:230.0/255.0 green:230.0/255.0 blue:230.0/255.0 alpha:1.0];
     self.view = tv;
     self.tableView = tv;
 }
@@ -42,7 +52,26 @@
     self.title = @"More";
     NSMutableArray *dictArray = [[NSMutableArray alloc] init];
     NSMutableDictionary* tmpDict = NULL;
+    _dataDictionary = [[NSMutableDictionary alloc] init];
 
+    //
+    // top section - View Scores
+    //
+    
+    // View Scores
+    tmpDict = [[NSMutableDictionary alloc] init];
+    [tmpDict setObject:[[NSNull alloc] init] forKey:kViewScoreString];
+    [dictArray addObject:tmpDict];
+    tmpDict = NULL;
+    
+    [_dataDictionary setObject:dictArray forKey:kMoreTopSection];
+    
+
+    //
+    // next section - Rate, Share, Feedback, About
+    //
+    dictArray = [[NSMutableArray alloc] init];
+    
     // Give Rating
     tmpDict = [[NSMutableDictionary alloc] init];
     [tmpDict setObject:[[NSNull alloc] init] forKey:kRateAppString];
@@ -77,15 +106,30 @@
     [dictArray addObject:tmpDict];
     tmpDict = NULL;
     
+    // next section
+    [_dataDictionary setObject:dictArray forKey:kMoreBottomSection];
+    
 
-    self.listEntries = dictArray;
+    self.sectionArray = [[NSMutableArray alloc] initWithObjects:kMoreTopSection, kMoreBottomSection, nil];
 }
 
 #pragma mark -
 #pragma mark Table Data Source Methods
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return [self.sectionArray count];
+}
+
+- (NSString*) tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    return [self.sectionArray objectAtIndex:section];
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [self.listEntries count];
+    NSString* key = [self.sectionArray objectAtIndex:section];
+    NSMutableArray* rowArray = [self.dataDictionary objectForKey:key];
+    return [rowArray count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView
@@ -101,11 +145,16 @@
                 initWithStyle:UITableViewCellStyleDefault
                 reuseIdentifier:MoreCellIdentifier];
     }
-    
-    // Configure the cell
+
+    NSUInteger section = [indexPath section];
     NSUInteger row = [indexPath row];
-    NSMutableDictionary* dictEntry = [self.listEntries objectAtIndex:row];
-    cell.textLabel.text = [[dictEntry allKeys] objectAtIndex:0];
+    
+    NSString* key = [self.sectionArray objectAtIndex:section];
+    NSMutableArray* rowArray = [self.dataDictionary objectForKey:key];
+    
+    NSString* tmpStr = [[[rowArray objectAtIndex:row] allKeys] objectAtIndex:0];
+    cell.textLabel.text = tmpStr;
+
     return cell;
 }
 
@@ -113,26 +162,42 @@
 #pragma mark Table Delegate Methods
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    NSUInteger section = [indexPath section];
     NSUInteger row = [indexPath row];
-    NSMutableDictionary* dictEntry = [self.listEntries objectAtIndex:row];
-    id tmpObj = [[dictEntry allValues] objectAtIndex:0];
-    NSString* tmpStr = [[dictEntry allKeys] objectAtIndex:0];
+    
+    NSString* key = [self.sectionArray objectAtIndex:section];
+    NSMutableArray* rowArray = [self.dataDictionary objectForKey:key];
+
+    NSString* tmpStr = [[[rowArray objectAtIndex:row] allKeys] objectAtIndex:0];
+    
+    id tmpObj = [[rowArray objectAtIndex:row] objectForKey:tmpStr];
+    
     if([tmpStr isEqualToString:kShareAppString])
     {
+        // Share this app
         [self presentViewController:tmpObj animated:YES completion:nil];
     }
     else if([tmpObj isKindOfClass:[UIViewController class]])
     {
+        // About page
         [self.navigationController pushViewController:tmpObj
                                              animated:YES];
         
     }
     else if([tmpStr isEqualToString:kGiveFeedbackString])
     {
+        // Give Feedback
         [Utility launchMailAppOnDevice:@"support@hcsninc.com" cc:@"" bcc:@"" subject:@"Giving Feedback on" body:@""];
+    }
+    else if([tmpStr isEqualToString:kViewScoreString])
+    {
+        // View Score
+        id controller = [[ViewScoreTableViewController alloc] initWithStyle:UITableViewStylePlain];
+        [self.navigationController pushViewController:controller animated:YES];
     }
     else if([tmpStr isEqualToString:kRateAppString])
     {
+        // Rate this app
         NSString *templateReviewURL = @"itms-apps://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=APP_ID";
         
         NSString *reviewURL = [templateReviewURL stringByReplacingOccurrencesOfString:@"APP_ID" withString:[NSString stringWithFormat:@"%@", @"641692138"]];

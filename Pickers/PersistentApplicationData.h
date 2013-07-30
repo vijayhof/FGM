@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @class MathScore;
+@class CHCircularBuffer;
 
 @interface PersistentApplicationData : NSObject <NSCoding, NSCopying>
 
@@ -17,6 +18,6 @@
 @property (strong,nonatomic) NSString* currentOperation;
 @property (nonatomic) BOOL shuffleNumbers;
 @property (nonatomic) BOOL shuffleOperations;
-@property (strong,nonatomic) NSMutableArray* mathScores;
+@property (strong,nonatomic) CHCircularBuffer* mathScores;
 
 @end

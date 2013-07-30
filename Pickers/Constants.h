@@ -49,13 +49,15 @@
 #define kDefaultCurrentOperation         kADD_OP
 #define kDefaultShuffleNumbers           false
 #define kDefaultShuffleOperations        false
+#define kDefaultScoreArraySize           10
 
 //
-// Constants used for Scoring
+// Default date format
 //
-//#define kQnANotAttempted                 @"NOT_ATTEMPTED"
-//#define kQnACorrectAnswer                @"CORRECT_ANSWER"
-//#define kQnAWrongAnswer                  @"WRONG_ANSWER"
+//#define kDefaultDateFormatForScore    @"MM"
+//#define kDefaultDateFormatForScore    @"MMM dd (EEE) h:mm a"
+#define kDefaultDateFormatForScore    @"EEE MMM dd, h:mm a"
+
 
 
 //

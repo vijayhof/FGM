@@ -9,11 +9,14 @@
 /* Begin PBXBuildFile section */
 		6705D2351711E9AA0097E0A8 /* TapButtonTableComponentController.h in Resources */ = {isa = PBXBuildFile; fileRef = 6705D2341711E9AA0097E0A8 /* TapButtonTableComponentController.h */; };
 		6705D2371711EA040097E0A8 /* TapButtonTableComponentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6705D2361711EA030097E0A8 /* TapButtonTableComponentController.m */; };
-		670C7966179A321A00C93115 /* CHCircularBuffer.m in Sources */ = {isa = PBXBuildFile; fileRef = 670C7965179A321A00C93115 /* CHCircularBuffer.m */; };
-		670C7969179A322A00C93115 /* Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 670C7968179A322A00C93115 /* Util.m */; };
+		670C7966179A321A00C93115 /* CHCircularBuffer.m in Sources */ = {isa = PBXBuildFile; fileRef = 670C7965179A321A00C93115 /* CHCircularBuffer.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		670C7969179A322A00C93115 /* Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 670C7968179A322A00C93115 /* Util.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		670C796C179B462600C93115 /* ViewScoreTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 670C796B179B462500C93115 /* ViewScoreTableViewController.m */; };
 		6719E40916D9530700C1D2C6 /* MathUIControlObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 6719E40816D9530700C1D2C6 /* MathUIControlObject.m */; };
 		6719E42616DADF2A00C1D2C6 /* BaseTableComponentController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6719E42516DADF2A00C1D2C6 /* BaseTableComponentController.xib */; };
 		6730FF1717261714003B5E04 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6730FF1617261714003B5E04 /* Crashlytics.framework */; };
+		673A6CCA17A390DF00FD19AA /* ScoreTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 673A6CC917A390DF00FD19AA /* ScoreTableViewCell.xib */; };
+		673A6CCD17A3952200FD19AA /* ScoreTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 673A6CCC17A3952200FD19AA /* ScoreTableViewCell.m */; };
 		673D5DAE179234E1007A4C3E /* MathScore.m in Sources */ = {isa = PBXBuildFile; fileRef = 673D5DAD179234E1007A4C3E /* MathScore.m */; };
 		6746B2C11719D30E0029E835 /* TakeTestComponentController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6746B2C01719D30E0029E835 /* TakeTestComponentController.xib */; };
 		6746B2C3171A04A40029E835 /* TakeTestComponentController.h in Resources */ = {isa = PBXBuildFile; fileRef = 6746B2C2171A04A40029E835 /* TakeTestComponentController.h */; };
@@ -62,10 +65,15 @@
 		670C7965179A321A00C93115 /* CHCircularBuffer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHCircularBuffer.m; sourceTree = "<group>"; };
 		670C7967179A322A00C93115 /* Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Util.h; sourceTree = "<group>"; };
 		670C7968179A322A00C93115 /* Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Util.m; sourceTree = "<group>"; };
+		670C796A179B462400C93115 /* ViewScoreTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewScoreTableViewController.h; sourceTree = "<group>"; };
+		670C796B179B462500C93115 /* ViewScoreTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewScoreTableViewController.m; sourceTree = "<group>"; };
 		6719E40716D9530700C1D2C6 /* MathUIControlObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MathUIControlObject.h; sourceTree = "<group>"; };
 		6719E40816D9530700C1D2C6 /* MathUIControlObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MathUIControlObject.m; sourceTree = "<group>"; };
 		6719E42516DADF2A00C1D2C6 /* BaseTableComponentController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BaseTableComponentController.xib; sourceTree = "<group>"; };
 		6730FF1617261714003B5E04 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
+		673A6CC917A390DF00FD19AA /* ScoreTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScoreTableViewCell.xib; sourceTree = "<group>"; };
+		673A6CCB17A3952200FD19AA /* ScoreTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScoreTableViewCell.h; sourceTree = "<group>"; };
+		673A6CCC17A3952200FD19AA /* ScoreTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScoreTableViewCell.m; sourceTree = "<group>"; };
 		673D5DAC179234E1007A4C3E /* MathScore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MathScore.h; sourceTree = "<group>"; };
 		673D5DAD179234E1007A4C3E /* MathScore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MathScore.m; sourceTree = "<group>"; };
 		6746B2C01719D30E0029E835 /* TakeTestComponentController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TakeTestComponentController.xib; sourceTree = "<group>"; };
@@ -166,6 +174,7 @@
 				6719E42516DADF2A00C1D2C6 /* BaseTableComponentController.xib */,
 				6746B2C01719D30E0029E835 /* TakeTestComponentController.xib */,
 				674CA07E171F1072002652C2 /* AboutPageController.xib */,
+				673A6CC917A390DF00FD19AA /* ScoreTableViewCell.xib */,
 			);
 			name = xib;
 			sourceTree = "<group>";
@@ -195,6 +204,10 @@
 			children = (
 				817C004B13FBE5100082747C /* AppDelegate.h */,
 				67C2370716CAF125003D0878 /* AppDelegate.m */,
+				67AC3CD7178F48A500FBE9D9 /* CustomRowUIView.h */,
+				67AC3CD8178F48A500FBE9D9 /* CustomRowUIView.m */,
+				673A6CCB17A3952200FD19AA /* ScoreTableViewCell.h */,
+				673A6CCC17A3952200FD19AA /* ScoreTableViewCell.m */,
 				817C005D13FBE8F60082747C /* BaseTableComponentController.h */,
 				817C005E13FBE8F60082747C /* BaseTableComponentController.m */,
 				6705D2341711E9AA0097E0A8 /* TapButtonTableComponentController.h */,
@@ -205,8 +218,8 @@
 				674CA084171F3C75002652C2 /* MoreTabComponentController.m */,
 				674CA086171F438C002652C2 /* AboutPageController.h */,
 				674CA087171F438C002652C2 /* AboutPageController.m */,
-				67AC3CD7178F48A500FBE9D9 /* CustomRowUIView.h */,
-				67AC3CD8178F48A500FBE9D9 /* CustomRowUIView.m */,
+				670C796A179B462400C93115 /* ViewScoreTableViewController.h */,
+				670C796B179B462500C93115 /* ViewScoreTableViewController.m */,
 			);
 			name = "delegate controller etc";
 			sourceTree = "<group>";
@@ -382,6 +395,7 @@
 				67790C671724AD29009616EE /* Default.png in Resources */,
 				67790C681724AD29009616EE /* Default@2x.png in Resources */,
 				67790C691724AD29009616EE /* Default-568h@2x.png in Resources */,
+				673A6CCA17A390DF00FD19AA /* ScoreTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -424,6 +438,8 @@
 				673D5DAE179234E1007A4C3E /* MathScore.m in Sources */,
 				670C7966179A321A00C93115 /* CHCircularBuffer.m in Sources */,
 				670C7969179A322A00C93115 /* Util.m in Sources */,
+				670C796C179B462600C93115 /* ViewScoreTableViewController.m in Sources */,
+				673A6CCD17A3952200FD19AA /* ScoreTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -11,6 +11,8 @@
 #import "AppDelegate.h"
 #import "PersistentApplicationData.h"
 #import "SingleAppDataObject.h"
+#import "CHCircularBuffer.h"
+#import "MathScore.h"
 
 @implementation Utility
 
@@ -70,6 +72,9 @@
 	return (SingleAppDataObject*) ([Utility sharedAppDelegate].theAppDataObject);
 }
 
+//
+// Get persistent data methods
+//
 + (int) getCurrentNumber
 {
     PersistentApplicationData* tmpObj = [Utility sharedAppDelegate].persistentApplicationData;
@@ -100,6 +105,23 @@
     return tmpObj.shuffleOperations;
 }
 
++ (CHCircularBuffer*) getMathScores
+{
+    PersistentApplicationData* tmpObj = [Utility sharedAppDelegate].persistentApplicationData;
+    if (!tmpObj.mathScores) {
+        tmpObj.mathScores = [[CHCircularBuffer alloc] initWithCapacity:kDefaultScoreArraySize];
+    }
+    
+    D2Log(@"Utility.getMathScores");
+    [MathScore printArray:tmpObj.mathScores];
+    
+    return tmpObj.mathScores;
+}
+
+
+//
+// Set persistent data methods
+//
 + (void) setCurrentNumber: (int) pCurrentNumber
 {
     PersistentApplicationData* tmpObj = [Utility sharedAppDelegate].persistentApplicationData;
@@ -129,6 +151,63 @@
     PersistentApplicationData* tmpObj = [Utility sharedAppDelegate].persistentApplicationData;
     tmpObj.shuffleOperations = pShuffleOperations;
 }
+
++ (void) setMathScores:(CHCircularBuffer *)pMathScores
+{
+    PersistentApplicationData* tmpObj = [Utility sharedAppDelegate].persistentApplicationData;
+    tmpObj.mathScores = pMathScores; // TODO - confirm retain/copy logic
+    D2Log(@"Utility.setMathScores");
+    [MathScore printArray:tmpObj.mathScores];
+}
+
++ (NSString*) formatOperationType:(NSString*)operationType
+{
+    if([operationType isEqualToString:kADD_OP]) return @"Add";
+    else if([operationType isEqualToString:kSUB_OP]) return @"Sub";
+    else if([operationType isEqualToString:kMUL_OP]) return @"Multiply";
+    else if([operationType isEqualToString:kDIV_OP]) return @"Divide";
+    
+    return @"";
+}
+
+//
+// default date format for score
+//
++ (NSString*)formatDateForScore:(NSDate*) date
+{
+	NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+	[formatter setDateFormat:kDefaultDateFormatForScore];
+	return [formatter stringFromDate:date];
+}
+
+//
+// return time difference in format - 99 m 99 s
+// date2 > date1 - it is expected that date2 is greater than date1
+//
++ (NSString*)formatTimeInterval:(NSDate*) date1 betweenDate:(NSDate*) date2
+{
+    NSTimeInterval timeInterval = [date2 timeIntervalSinceDate:date1];
+    NSInteger ti = (NSInteger)timeInterval;
+    NSInteger seconds = ti % 60;
+    NSInteger minutes = (ti / 60) % 60;
+    NSInteger hours = (ti / 3600);
+    
+    if(hours > 0)
+    {
+        return [NSString stringWithFormat:@"%2i hour %2i min %2i sec", hours, minutes, seconds];
+    }
+    else if (minutes > 0)
+    {
+        return [NSString stringWithFormat:@"%2i min %2i sec", minutes, seconds];
+    }
+    else
+    {
+        return [NSString stringWithFormat:@"%2i sec", seconds];
+    }
+    
+    return @"";
+}
+
 
 //
 // Return the directory where we will store the data files

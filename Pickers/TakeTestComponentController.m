@@ -12,6 +12,7 @@
 #import "Utility.h"
 #import "MathUtility.h"
 #import "MathScore.h"
+#import "CHCircularBuffer.h"
 
 @implementation TakeTestComponentController
 
@@ -108,8 +109,6 @@
 {    
     int actualResultInt = [(MathTableDataObject *)[mathTableDataObjectArr objectAtIndex:curIndex] resultNumber];
     int userEnteredNumberInt = [userEnteredNumber intValue];
-//    D2Log(@"actual result=%d", actualResultInt);
-//    D2Log(@"entered result=%d", userEnteredNumberInt);
 
     if(actualResultInt != userEnteredNumberInt)
     {
@@ -135,6 +134,10 @@
     curIndex++;
     if(curIndex >= 10)
     {
+        CHCircularBuffer* circularBuffer = [Utility getMathScores];
+        [circularBuffer addObject:mathScore];
+        [Utility setMathScores:circularBuffer];
+        
         NSString* tmpKudosString;
         
         if(totalCorrectAnswers >= 9)
@@ -161,6 +164,8 @@
                               cancelButtonTitle:@"Done"
                               otherButtonTitles:nil];
         [alert show];
+        
+//        [mathScore print];
         
         [self resetData];
         return;

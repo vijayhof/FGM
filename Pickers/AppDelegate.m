@@ -11,6 +11,9 @@
 #import "PersistentApplicationData.h"
 #import "Utility.h"
 #import "SingleAppDataObject.h"
+#import "MathScore.h"
+#import "CHCircularBuffer.h"
+
 #import <Crashlytics/Crashlytics.h>
 
 @implementation AppDelegate
@@ -31,7 +34,8 @@
     }
     else
     {
-        D2Log(@"persistent data: currentNumber=%d, maxNumberArraySize=%d, currentOperation=%@, shuffleNumbers=%@, shuffleOperations=%@", persistentApplicationData.currentNumber, persistentApplicationData.maxNumberArraySize, persistentApplicationData.currentOperation, persistentApplicationData.shuffleNumbers ?@"YES" : @"NO", persistentApplicationData.shuffleOperations ? @"YES" : @"NO");
+        D2Log(@"persistent data: currentNumber=%d, maxNumberArraySize=%d, currentOperation=%@, shuffleNumbers=%@, shuffleOperations=%@, mathScores=%d", persistentApplicationData.currentNumber, persistentApplicationData.maxNumberArraySize, persistentApplicationData.currentOperation, persistentApplicationData.shuffleNumbers ?@"YES" : @"NO", persistentApplicationData.shuffleOperations ? @"YES" : @"NO", [persistentApplicationData.mathScores count]);
+        //[MathScore printArray:persistentApplicationData.mathScores];
     }
     
 	return [super init];
@@ -59,7 +63,8 @@
      Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
      */
     
-    D2Log(@"will resign active");
+//    D2Log(@"will resign active");
+    
     [Utility storeIntoArchive:persistentApplicationData];
 }
 

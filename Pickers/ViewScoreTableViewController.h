@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MoreTabComponentController : UITableViewController
+@class ScoreTableViewCell;
+@interface ViewScoreTableViewController : UITableViewController
 
+- (void) deleteAllScores: (id) sender;
 
 @end

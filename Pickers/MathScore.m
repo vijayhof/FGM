@@ -8,32 +8,46 @@
 
 #import "MathScore.h"
 #import "Constants.h"
+#import "Utility.h"
 #import "MathTableDataObject.h"
+#import "CHCircularBuffer.h"
 
-#define    kMathScoreStartTimeKey        @"mathScoreStartTime"
-#define    kMathScoreEndTimeKey          @"mathScoreEndTime"
-#define    kMathScoreEachScoreArrKey     @"mathScoreEachScoreArr"
+#define    kMathScoreStartTimeKey         @"mathScoreStartTime"
+#define    kMathScoreEndTimeKey           @"mathScoreEndTime"
+#define    kMathScoreOperationTypeKey     @"mathScoreOperationType"
+#define    kMathScoreShuffleNumbersKey    @"mathScoreShuffleNumbers"
+#define    kMathScoreEachScoreArrKey      @"mathScoreEachScoreArr"
 
-#define    kMathEachScoreStartTimeKey    @"mathEachScoreStartTime"
-#define    kMathEachScoreEndTimeKey      @"mathEachScoreEndTime"
-#define    kMathEachScoreFirstNumberKey  @"mathEachScoreFirstNumber"
-#define    kMathEachScoreSecondNumberKey @"mathEachScoreSecondNumber"
-#define    kMathEachScoreResultNumberKey @"mathEachScoreResultNumber"
-#define    kMathEachScoreOperandKey      @"mathEachScoreOperand"
+#define    kMathEachScoreAnswerTypeKey    @"mathEachScoreAnswerType"
+#define    kMathEachScoreStartTimeKey     @"mathEachScoreStartTime"
+#define    kMathEachScoreEndTimeKey       @"mathEachScoreEndTime"
+#define    kMathEachScoreFirstNumberKey   @"mathEachScoreFirstNumber"
+#define    kMathEachScoreSecondNumberKey  @"mathEachScoreSecondNumber"
+#define    kMathEachScoreResultNumberKey  @"mathEachScoreResultNumber"
+#define    kMathEachScoreOperandKey       @"mathEachScoreOperand"
 
 @implementation MathScore
 
-@synthesize startTime;
-@synthesize endTime;
-@synthesize eachScoreArr;
+@synthesize startTime = _startTime;
+@synthesize endTime = _endTime;
+@synthesize operationType = _operationType;
+@synthesize shuffleNumbers = _shuffleNumbers;
+@synthesize eachScoreArr = _eachScoreArr;
+
+@synthesize totalQuestions = _totalQuestions;
+@synthesize totalCorrect = _totalCorrect;
+@synthesize totalWrong = _totalWrong;
+@synthesize totalNotAttempted = _totalNotAttempted;
 
 - (id) init
 {
     self = [super init];
     if (self) {
-        self.startTime     = nil;
-        self.endTime       = nil;
-        self.eachScoreArr  = nil;
+        self.startTime      = nil;
+        self.endTime        = nil;
+        self.operationType  = nil;
+        self.shuffleNumbers = false;
+        self.eachScoreArr   = nil;
     }
     return self;
 }
@@ -41,18 +55,22 @@
 #pragma mark NSCoding
 - (void)encodeWithCoder:(NSCoder *)encoder
 {
-    [encoder encodeObject:startTime    forKey:kMathScoreStartTimeKey];
-    [encoder encodeObject:endTime      forKey:kMathScoreEndTimeKey];
-    [encoder encodeObject:eachScoreArr forKey:kMathScoreEachScoreArrKey];
+    [encoder encodeObject:self.startTime        forKey:kMathScoreStartTimeKey];
+    [encoder encodeObject:self.endTime          forKey:kMathScoreEndTimeKey];
+    [encoder encodeObject:self.operationType    forKey:kMathScoreOperationTypeKey];
+    [encoder encodeBool:self.shuffleNumbers     forKey:kMathScoreShuffleNumbersKey];
+    [encoder encodeObject:self.eachScoreArr     forKey:kMathScoreEachScoreArrKey];
 }
 
 - (id)initWithCoder:(NSCoder *)decoder
 {
     if (self = [super init])
     {
-        startTime     = [decoder decodeObjectForKey:kMathScoreStartTimeKey];
-        endTime       = [decoder decodeObjectForKey:kMathScoreEndTimeKey];
-        eachScoreArr  = [decoder decodeObjectForKey:kMathScoreEachScoreArrKey];
+        self.startTime           = [decoder decodeObjectForKey:kMathScoreStartTimeKey];
+        self.endTime             = [decoder decodeObjectForKey:kMathScoreEndTimeKey];
+        self.operationType       = [decoder decodeObjectForKey:kMathScoreOperationTypeKey];
+        self.shuffleNumbers      = [decoder decodeBoolForKey:kMathScoreShuffleNumbersKey];
+        self.eachScoreArr        = [decoder decodeObjectForKey:kMathScoreEachScoreArrKey];
     }
     
     return self;
@@ -63,9 +81,11 @@
 - (id)copyWithZone:(NSZone *)zone
 {
     MathScore *copy = [[[self class] allocWithZone:zone] init];
-    copy.startTime     = [self.startTime copyWithZone:zone];
-    copy.endTime       = [self.endTime copyWithZone:zone];
-    copy.eachScoreArr  = [self.eachScoreArr copyWithZone:zone];
+    copy.startTime       = [self.startTime copyWithZone:zone];
+    copy.endTime         = [self.endTime copyWithZone:zone];
+    copy.operationType   = [self.operationType copyWithZone:zone];
+    copy.shuffleNumbers  = self.shuffleNumbers;
+    copy.eachScoreArr    = [self.eachScoreArr copyWithZone:zone];
     return copy;
 }
 
@@ -76,6 +96,8 @@
     {
         self.startTime = [NSDate date];
         self.endTime = nil;
+        self.operationType = [Utility getCurrentOperation]; // todo - figure out string assignment
+        self.shuffleNumbers = [Utility getShuffleNumbers];
         
         int size = [mathTableDataObjectArray count];
         self.eachScoreArr = [[NSMutableArray alloc] initWithCapacity:size];
@@ -114,23 +136,91 @@
     return [eachScore answerType];
 }
 
+- (int)totalQuestions
+{
+    if(self.eachScoreArr != nil)
+    {
+        return [self.eachScoreArr count];
+    }
+    
+    return 0;
+}
+
+- (int)totalCorrect
+{
+    return [self computeTotalCount: kQnACorrectAnswer];
+}
+
+- (int)totalWrong
+{
+    return [self computeTotalCount: kQnAWrongAnswer];
+}
+
+- (int)totalNotAttempted
+{
+    return [self computeTotalCount: kQnANotAttempted];
+}
+
+- (int)computeTotalCount:(MathScoreAnswerType) answerType
+{
+    int counter = 0;
+    
+    if(self.eachScoreArr != nil)
+    {
+        for(MathEachScore* eachScore in self.eachScoreArr)
+        {
+            if(eachScore != nil)
+            {
+                if([eachScore answerType] == answerType)
+                {
+                    counter++;
+                }
+            }
+        }
+    }
+    
+    return counter;
+}
+
+
+- (void) print
+{
+    D2Log(@"print MathScore");
+    D2Log(@"mathScore: %@, %@, %d", self.startTime, self.endTime, [self.eachScoreArr count]);
+    for(MathEachScore* eachScore in self.eachScoreArr)
+    {
+        D2Log(@"mathEachScore:%d, %@, %@, %d, %d, %d, %@",
+        eachScore.answerType, eachScore.startTime, eachScore.endTime, eachScore.firstNumber, eachScore.secondNumber, eachScore.resultNumber, eachScore.operand);
+    }
+}
+
++ (void) printArray:(CHCircularBuffer*) pBuffer
+{
+    D2Log(@"print MathScore Array: count=%d", [pBuffer count]);
+    for(MathScore* mathScore in pBuffer)
+    {
+        [mathScore print];
+    }
+}
+
 @end
 
 #pragma mark - MathEachScore
 @implementation MathEachScore
 
-@synthesize answerType;
-@synthesize startTime;
-@synthesize endTime;
-@synthesize firstNumber;
-@synthesize secondNumber;
-@synthesize operand;
-@synthesize resultNumber;
+@synthesize answerType = _answerType;
+@synthesize startTime = _startTime;
+@synthesize endTime = _endTime;
+@synthesize firstNumber = _firstNumber;
+@synthesize secondNumber = _secondNumber;
+@synthesize operand = _operand;
+@synthesize resultNumber = _resultNumber;
 
 - (id) init
 {
     self = [super init];
     if (self) {
+        self.answerType    = kQnANotAttempted;
         self.startTime     = nil;
         self.endTime       = nil;
         self.firstNumber   = 0;
@@ -144,24 +234,26 @@
 #pragma mark NSCoding
 - (void)encodeWithCoder:(NSCoder *)encoder
 {
-    [encoder encodeObject:startTime  forKey:kMathEachScoreStartTimeKey];
-    [encoder encodeObject:endTime    forKey:kMathEachScoreEndTimeKey];
-    [encoder encodeInt:firstNumber   forKey:kMathEachScoreFirstNumberKey];
-    [encoder encodeInt:secondNumber  forKey:kMathEachScoreSecondNumberKey];
-    [encoder encodeInt:resultNumber  forKey:kMathEachScoreResultNumberKey];
-    [encoder encodeObject:operand    forKey:kMathEachScoreOperandKey];
+    [encoder encodeInteger:self.answerType forKey:kMathEachScoreAnswerTypeKey];
+    [encoder encodeObject:self.startTime   forKey:kMathEachScoreStartTimeKey];
+    [encoder encodeObject:self.endTime     forKey:kMathEachScoreEndTimeKey];
+    [encoder encodeInt:self.firstNumber    forKey:kMathEachScoreFirstNumberKey];
+    [encoder encodeInt:self.secondNumber   forKey:kMathEachScoreSecondNumberKey];
+    [encoder encodeInt:self.resultNumber   forKey:kMathEachScoreResultNumberKey];
+    [encoder encodeObject:self.operand     forKey:kMathEachScoreOperandKey];
 }
 
 - (id)initWithCoder:(NSCoder *)decoder
 {
     if (self = [super init])
     {
-        startTime     = [decoder decodeObjectForKey:kMathEachScoreStartTimeKey];
-        endTime       = [decoder decodeObjectForKey:kMathEachScoreEndTimeKey];
-        firstNumber   = [decoder decodeIntForKey:kMathEachScoreFirstNumberKey];
-        secondNumber  = [decoder decodeIntForKey:kMathEachScoreSecondNumberKey];
-        resultNumber  = [decoder decodeIntForKey:kMathEachScoreResultNumberKey];
-        operand       = [decoder decodeObjectForKey:kMathEachScoreOperandKey];
+        self.answerType     = [decoder decodeIntegerForKey:kMathEachScoreAnswerTypeKey];
+        self.startTime      = [decoder decodeObjectForKey:kMathEachScoreStartTimeKey];
+        self.endTime        = [decoder decodeObjectForKey:kMathEachScoreEndTimeKey];
+        self.firstNumber    = [decoder decodeIntForKey:kMathEachScoreFirstNumberKey];
+        self.secondNumber   = [decoder decodeIntForKey:kMathEachScoreSecondNumberKey];
+        self.resultNumber   = [decoder decodeIntForKey:kMathEachScoreResultNumberKey];
+        self.operand        = [decoder decodeObjectForKey:kMathEachScoreOperandKey];
     }
     
     return self;
@@ -172,6 +264,7 @@
 - (id)copyWithZone:(NSZone *)zone
 {
     MathEachScore *copy = [[[self class] allocWithZone:zone] init];
+    copy.answerType    = self.answerType;
     copy.startTime     = [self.startTime copyWithZone:zone];
     copy.endTime       = [self.endTime copyWithZone:zone];
     copy.firstNumber   = self.firstNumber;
