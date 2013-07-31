@@ -12,7 +12,6 @@
 #import "Utility.h"
 #import "MathUtility.h"
 #import "MathScore.h"
-#import "CHCircularBuffer.h"
 
 @implementation TakeTestComponentController
 
@@ -145,10 +144,14 @@
     curIndex++;
     if(curIndex >= 10)
     {
-        CHCircularBuffer* circularBuffer = [Utility getMathScores];
-        [circularBuffer insertObject:mathScore atIndex:0];
-//        [circularBuffer addObject:mathScore];
-        [Utility setMathScores:circularBuffer];
+        NSMutableArray* mutableArray = [Utility getMathScores];
+        [mutableArray insertObject:mathScore atIndex:0];
+        if([mutableArray count] > kDefaultScoreArraySize)
+        {
+            [mutableArray removeLastObject];
+        }
+        
+        [Utility setMathScores:mutableArray];
         
         NSString* tmpKudosString;
         
@@ -227,15 +230,12 @@
 
 - (id)init
 {
-    D2Log(@"init called");
     return [super init];
 }
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
-    D2Log(@"initWithNibName called");
-    
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization

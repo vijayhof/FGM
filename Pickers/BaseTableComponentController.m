@@ -98,15 +98,12 @@
 
 - (id)init
 {
-    D2Log(@"init called");
     return [super init];
 }
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
-    D2Log(@"initWithNibName called");
-
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization

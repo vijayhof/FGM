@@ -11,7 +11,6 @@
 #import "AppDelegate.h"
 #import "PersistentApplicationData.h"
 #import "SingleAppDataObject.h"
-#import "CHCircularBuffer.h"
 #import "MathScore.h"
 
 @implementation Utility
@@ -105,15 +104,15 @@
     return tmpObj.shuffleOperations;
 }
 
-+ (CHCircularBuffer*) getMathScores
++ (NSMutableArray*) getMathScores
 {
     PersistentApplicationData* tmpObj = [Utility sharedAppDelegate].persistentApplicationData;
     if (!tmpObj.mathScores) {
-        tmpObj.mathScores = [[CHCircularBuffer alloc] initWithCapacity:kDefaultScoreArraySize];
+        tmpObj.mathScores = [[NSMutableArray alloc] initWithCapacity:kDefaultScoreArraySize];
     }
     
-    D2Log(@"Utility.getMathScores");
-    [MathScore printArray:tmpObj.mathScores];
+//    D2Log(@"Utility.getMathScores");
+//    [MathScore printArray:tmpObj.mathScores];
     
     return tmpObj.mathScores;
 }
@@ -152,12 +151,12 @@
     tmpObj.shuffleOperations = pShuffleOperations;
 }
 
-+ (void) setMathScores:(CHCircularBuffer *)pMathScores
++ (void) setMathScores:(NSMutableArray *)pMathScores
 {
     PersistentApplicationData* tmpObj = [Utility sharedAppDelegate].persistentApplicationData;
     tmpObj.mathScores = pMathScores; // TODO - confirm retain/copy logic
-    D2Log(@"Utility.setMathScores");
-    [MathScore printArray:tmpObj.mathScores];
+//    D2Log(@"Utility.setMathScores");
+//    [MathScore printArray:tmpObj.mathScores];
 }
 
 + (NSString*) formatOperationType:(NSString*)operationType

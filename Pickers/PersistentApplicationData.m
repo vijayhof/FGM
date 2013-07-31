@@ -8,7 +8,6 @@
 
 #import "PersistentApplicationData.h"
 #import "Constants.h"
-#import "CHCircularBuffer.h"
 
 #define    kCurrentNumberKey        @"currentNumber"
 #define    kMaxNumberArraySizeKey   @"maxNumberArraySize"
@@ -35,7 +34,7 @@
         self.currentOperation   = kDefaultCurrentOperation;
         self.shuffleNumbers     = false;
         self.shuffleOperations  = false;
-        self.mathScores         = [[CHCircularBuffer alloc] initWithCapacity:kDefaultScoreArraySize];
+        self.mathScores         = [[NSMutableArray alloc] initWithCapacity:kDefaultScoreArraySize];
     }
     return self;
 }

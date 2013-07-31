@@ -14,8 +14,6 @@
 
 - (void)viewDidLoad
 {
-    D2Log(@"viewDidLoad");
-    
     [super viewDidLoad];
     
     self.message = [[NSString alloc] initWithFormat:@"Version %@", [self readVersionFromPlist] ];
@@ -26,8 +24,6 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    D2Log(@"viewWillAppear");
-
     label.text = message;
     [super viewWillAppear:animated];
 }

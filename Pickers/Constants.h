@@ -49,7 +49,7 @@
 #define kDefaultCurrentOperation         kADD_OP
 #define kDefaultShuffleNumbers           false
 #define kDefaultShuffleOperations        false
-#define kDefaultScoreArraySize           10
+#define kDefaultScoreArraySize           20
 
 //
 // Default date format

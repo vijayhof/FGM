@@ -8,7 +8,6 @@
 #import "Constants.h"
 #import "ViewScoreTableViewController.h"
 #import "Utility.h"
-#import "CHCircularBuffer.h"
 #import "MathScore.h"
 #import "ScoreTableViewCell.h"
 
@@ -16,14 +15,13 @@
 
 @interface ViewScoreTableViewController ()
 
-
-@property (strong, nonatomic) CHCircularBuffer *circularBuffer;
+@property (strong, nonatomic) NSMutableArray *mutableArray;
 
 @end
 
 @implementation ViewScoreTableViewController
 
-@synthesize circularBuffer = _circularBuffer;
+@synthesize mutableArray = _mutableArray;
 
 #pragma mark -
 - (void)viewDidLoad
@@ -39,8 +37,7 @@
     UIBarButtonItem* barButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Delete All" style:UIBarButtonItemStyleBordered target:self action:@selector(deleteAllScores:)];
     self.navigationItem.rightBarButtonItem = barButtonItem;
     
-    //self.circularBuffer = [[CHCircularBuffer alloc]initWithArray:[Utility getMathScores]];
-    self.circularBuffer = [Utility getMathScores];
+    self.mutableArray = [Utility getMathScores];
 
 }
 
@@ -52,7 +49,7 @@
 
 - (void) deleteAllScores: (id) sender
 {
-    [self.circularBuffer removeAllObjects];
+    [self.mutableArray removeAllObjects];
     [self.tableView reloadData];
 }
 
@@ -60,8 +57,8 @@
 #pragma mark Table Data Source Methods
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    D2Log(@"count=%d", [self.circularBuffer count]);
-    return [self.circularBuffer count];
+//    D2Log(@"count=%d", [self.mutableArray count]);
+    return [self.mutableArray count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView
@@ -72,7 +69,7 @@
     
     // Configure the cell
     NSUInteger row = [indexPath row];
-    MathScore* mathScore = [self.circularBuffer objectAtIndex:row];
+    MathScore* mathScore = [self.mutableArray objectAtIndex:row];
     cell.startTime = [Utility formatDateForScore:[mathScore startTime]];
     cell.timeTaken = [Utility formatTimeInterval:[mathScore startTime] betweenDate:[mathScore endTime]];
     int totalQuestions = [mathScore totalQuestions];
@@ -96,11 +93,10 @@
 
 - (void) tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    D2Log(@"entered commitEditingStyle");
     NSUInteger row = [indexPath row];
-    [self.circularBuffer removeObjectAtIndex:row];
+    [self.mutableArray removeObjectAtIndex:row];
     [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-    [MathScore printArray:self.circularBuffer];
+//    [MathScore printArray:self.mutableArray];
 }
 
 @end

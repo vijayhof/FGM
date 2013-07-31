@@ -1,0 +1,8 @@
+//
+// Prefix header for all source files of the 'Math Tables for Kids Tests' target in the 'Math Tables for Kids Tests' project
+//
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+#endif

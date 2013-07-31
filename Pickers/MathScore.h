@@ -8,8 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-@class CHCircularBuffer;
-
 typedef NS_ENUM(NSInteger, MathScoreAnswerType) {
     kQnANotAttempted,
     kQnACorrectAnswer,
@@ -39,7 +37,7 @@ typedef NS_ENUM(NSInteger, MathScoreAnswerType) {
 - (void) setAnswerAtIndex:(NSUInteger) index withAnswerType:(MathScoreAnswerType) pAnswerType;
 - (MathScoreAnswerType) answerAtIndex:(NSUInteger) index;
 - (void) print;
-+ (void) printArray:(CHCircularBuffer*) pBuffer;
++ (void) printArray:(NSMutableArray*) pBuffer;
 
 @end
 

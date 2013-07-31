@@ -11,7 +11,6 @@
 @class PersistentApplicationData;
 @class SingleAppDataObject;
 @class AppDelegate;
-@class CHCircularBuffer;
 
 #define allTrim( object ) [object stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet] ]
 
@@ -30,14 +29,14 @@
 + (NSString*) getCurrentOperation;
 + (BOOL) getShuffleNumbers;
 + (BOOL) getShuffleOperations;
-+ (CHCircularBuffer*) getMathScores;
++ (NSMutableArray*) getMathScores;
 
 + (void) setCurrentNumber: (int) pCurrentNumber;
 + (void) setMaxNumberArraySize: (int) pMaxNumberArraySize;
 + (void) setCurrentOperation: (NSString *) pCurrentOperation;
 + (void) setShuffleNumbers: (BOOL) pShuffleNumbers;
 + (void) setShuffleOperations: (BOOL) pShuffleOperations;
-+ (void) setMathScores: (CHCircularBuffer *) pMathScores;
++ (void) setMathScores: (NSMutableArray *) pMathScores;
 
 // returns "Add" instead of ADD, etc
 + (NSString*) formatOperationType:(NSString*)operationType;

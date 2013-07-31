@@ -10,7 +10,6 @@
 #import "Constants.h"
 #import "Utility.h"
 #import "MathTableDataObject.h"
-#import "CHCircularBuffer.h"
 
 #define    kMathScoreStartTimeKey         @"mathScoreStartTime"
 #define    kMathScoreEndTimeKey           @"mathScoreEndTime"
@@ -194,7 +193,7 @@
     }
 }
 
-+ (void) printArray:(CHCircularBuffer*) pBuffer
++ (void) printArray:(NSMutableArray*) pBuffer
 {
     D2Log(@"print MathScore Array: count=%d", [pBuffer count]);
     for(MathScore* mathScore in pBuffer)
